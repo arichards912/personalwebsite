@@ -1,0 +1,10 @@
+.portfolio-section {
+    padding: 2rem 0;
+  }
+  
+  .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  

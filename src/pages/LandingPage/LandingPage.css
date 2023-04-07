@@ -1,0 +1,41 @@
+.landing-bg {
+  /*  Static fix because of the navbar for the height of landing*/
+  height: 96vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.vanta-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  justify-content: center;
+}
+
+h1 {
+  animation: fadeIn 2s;
+  padding: 1rem;
+}
+
+.intro-text {
+  font-size: var(--font-size-normal);
+  width: 50vw;
+  animation: fadeIn 2s;
+  padding: 1rem;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

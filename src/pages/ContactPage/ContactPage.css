@@ -1,0 +1,77 @@
+.contact-section {
+  padding: 2rem 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 2px solid var(--accent-color);
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--dark-color);
+}
+
+.form-control::placeholder {
+  color: transparent;
+}
+
+.form-control:not(:placeholder-shown) + label,
+.form-control:focus + label {
+  transform: translateY(-1.2em) scale(0.8);
+}
+
+.submit-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  font-size: var(--font-size-normal);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: var(--dark-color);
+}
+
+.social-media-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-icon {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: var(--dark-color);
+}
+
+.map-section {
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.map-section iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
