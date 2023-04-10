@@ -13,7 +13,7 @@ test('loads the landing page', async ({ page }) => {
 // of the background div
 test('landing page vanta background', async ({ page }) => {
     await page.goto(localhost);
-    expect(await page.isVisible('.vanta-bg')).toBe(true);
+    expect(await page.isVisible('.landing-bg')).toBe(true);
 });
 
 // Check that the paragraph div loads

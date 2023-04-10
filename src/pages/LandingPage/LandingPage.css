@@ -9,6 +9,7 @@
   overflow: hidden;
 }
 
+
 .vanta-bg {
   position: absolute;
   width: 100%;
@@ -21,6 +22,7 @@
 h1 {
   animation: fadeIn 2s;
   padding: 1rem;
+  font-size: 50px;
 }
 
 .intro-text {

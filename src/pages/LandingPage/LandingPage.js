@@ -22,11 +22,12 @@ function LandingPage() {
           scale: 1,
           scaleMobile: 1.0,
           backgroundColor: 0x23153c,
-          color: 0x982731,
+          color: 0xff4986,
           points: 5.0,
           maxDistance: 42.0,
           spacing: 30.0,
-          vertexColors: true
+          vertexColors: true,
+          showDots: true
         })
       );
     }
