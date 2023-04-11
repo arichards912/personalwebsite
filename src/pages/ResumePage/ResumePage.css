@@ -10,14 +10,14 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    padding: 0.5rem 1rem;
+    padding: 1rem 3rem;
     background-color: var(--secondary-color);
     color: var(--light-color);
     border-radius: 10px;;
     font-size: var(--font-size-normal);
     border: none;
     cursor: pointer;
-    margin: 1rem;
+    margin: 3rem;
     z-index: 5;
     border: solid 1px var(--secondary-color)
   }

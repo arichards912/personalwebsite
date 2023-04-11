@@ -5,14 +5,15 @@
     position: relative;
     color: var(--secondary-color);
     background-color: var(--light-color);
+    overflow: hidden;
   }
   
 
   .timeline-line {
     content: '';
     position: absolute;
-    width: 2px;
-    background-color: #333;
+    width: 4px;
+    background-color: var(--secondary-color);
     left: 50%;
     z-index: 1;
   }
