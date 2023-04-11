@@ -2,10 +2,11 @@
     display: flex;
     align-items: center;
     width: 100%;
+    opacity: 0;
     margin: 2rem 0 2rem 0;
     position: absolute;
     z-index: 1;
-  }
+    }
   
   
   .timeline-item.left .timeline-icon,
@@ -35,6 +36,7 @@
     z-index: 2;
     border: solid 3px var(--secondary-color);
     color: #fff;
+    
   }
   
   .timeline-date {
@@ -67,7 +69,7 @@
     width: 100%;
     padding: 1rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: #f9f9f9;
     z-index: 3;
     border: solid 1px var(--secondary-color);
@@ -114,5 +116,15 @@
   
   .timeline-duration.right {
     left: 50%;
+  }
+  
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   

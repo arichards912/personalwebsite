@@ -1,7 +1,7 @@
 import React from 'react';
 import './TimelineItem.css';
 
-const TimelineItem = ({ title, date, description, details, icon, position, relativePosition, totalHeight, duration, color, offsetIndex }) => {
+const TimelineItem = ({title, date, description, details, icon, position, relativePosition, totalHeight, duration, color, posIndex, offsetIndex }) => {
   
   let offset = 11 * offsetIndex;
   if (offset === 0) {
@@ -12,11 +12,11 @@ const TimelineItem = ({ title, date, description, details, icon, position, relat
       offset = 4;
     }
   }
-  
+  console.log(posIndex);
   return (
     <div
       className={`timeline-item ${position}`}
-      style={{ top: `${relativePosition * totalHeight}px` }}
+      style={{ top: `${relativePosition * totalHeight}px`, animation: `fadeIn 1.2s ${posIndex * 0.6}s ease-in forwards`}}
     >
       <div className="timeline-icon" style={{backgroundColor: color}}>
         {icon}
