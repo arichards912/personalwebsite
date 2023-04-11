@@ -6,7 +6,7 @@ test('navigates to the resume page', async ({ page }) => {
     await page.goto(localhost);
     await page.goto(localhost + '/resume')
     const title = await page.textContent('h2.section-title');
-    expect(title).toBe('Resume');
+    expect(title).toBe('Resume Timeline');
   });
 
 test('download resume', async ({ page }) => {
@@ -16,5 +16,5 @@ test('download resume', async ({ page }) => {
         page.waitForEvent('download'),
         page.click('a.download-button')
     ]);
-    expect(download.suggestedFilename()).toBe('Alexander_Richards_Resume.pdf');
+    expect(download.suggestedFilename()).toBe('RichardsResume.pdf');
 });
