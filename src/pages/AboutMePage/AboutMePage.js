@@ -1,59 +1,43 @@
-import React, { useState } from 'react';
-import './AboutMePage.css';
-import ProfileHead from './ProfileHead';
-import CategoryButton from './CategoryButton';
+import React from "react";
+import ParallaxSection from "../../components/ParallaxSection/ParallaxSection";
+import computerLight from "../../media/computer-light.jpg";
+import neuralNet from "../../media/neural-net.jpg";
+import lightStrands from "../../media/light-strands.jpg";
 
-function AboutMePage() {
-  const [activeCategory, setActiveCategory] = useState('workExperience');
-
-  const handleCategoryClick = (category) => {
-    setActiveCategory(category);
-  };
-
-  const content = {
-    workExperience: 'Work experience content goes here.',
-    education: 'Education content goes here.',
-    skills: 'Skills content goes here.',
-    interests: 'Interests content goes here.',
-  };
+const AboutMePage = () => {
+  const sections = [
+    {
+      image: computerLight,
+      title: "Section 1",
+      description: "This is the description for Section 1.",
+      textColor: "white",
+    },
+    {
+      image: neuralNet,
+      title: "Section 2",
+      description: "This is the description for Section 2.",
+      textColor: "black",
+    },
+    {
+      image: lightStrands,
+      title: "Section 3",
+      description: "This is the description for Section 3.",
+    }
+  ];
 
   return (
-    <section className="about-me-section">
-      <h2 className="section-title">About Me</h2>
-      
-      <div className="profile-container">
-        <ProfileHead />
-        <CategoryButton
-          category="workExperience"
-          label="Work Experience"
-          onClick={handleCategoryClick}
-          isActive={activeCategory === 'workExperience'}
+    <div>
+      {sections.map((section, index) => (
+        <ParallaxSection
+          key={index}
+          image={section.image}
+          title={section.title}
+          textColor={section.textColor}
+          description={section.description}
         />
-        <CategoryButton
-          category="education"
-          label="Education"
-          onClick={handleCategoryClick}
-          isActive={activeCategory === 'education'}
-        />
-        <CategoryButton
-          category="skills"
-          label="Skills"
-          onClick={handleCategoryClick}
-          isActive={activeCategory === 'skills'}
-        />
-        <CategoryButton
-          category="interests"
-          label="Interests"
-          onClick={handleCategoryClick}
-          isActive={activeCategory === 'interests'}
-        />
-      </div>
-
-      <div className="content-container">
-        <p className="content-text">{content[activeCategory]}</p>
-      </div>
-    </section>
+      ))}
+    </div>
   );
-}
+};
 
 export default AboutMePage;
