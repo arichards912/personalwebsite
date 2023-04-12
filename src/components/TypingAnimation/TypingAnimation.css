@@ -1,0 +1,22 @@
+@keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  
+ #cursor {
+    color: white;
+    width: 1em;
+    height: 1em;
+    margin-left: 6px;
+    animation: blink 1s infinite step-end;
+  }
+  
+  .typing-container {
+    width: 65vw;
+  }

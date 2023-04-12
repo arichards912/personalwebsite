@@ -22,7 +22,11 @@
 h1 {
   animation: fadeIn 2s;
   padding: 1rem;
-  font-size: 50px;
+  font-size: 60px;
+  display: inline-block;
+  position: relative;
+  color: var(--light-color);
+  text-align: center;
 }
 
 .intro-text {
