@@ -32,8 +32,8 @@ const Timeline = ({ items }) => {
     const step = 360 / count;
   
     for (let i = 0; i < count; i++) {
-      const hue = i * 2 * step;
-      const hslColor = `hsl(${hue}, 100%, 40%)`;
+      const hue = i * 5 * step;
+      const hslColor = `hsl(${hue}, 100%, 35%)`;
       colors.push(hslColor);
     }
   
