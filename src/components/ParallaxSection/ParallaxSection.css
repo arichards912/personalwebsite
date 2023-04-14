@@ -23,7 +23,7 @@
     font-size: 4rem;
     margin-bottom: 1rem;
     opacity: 0;
-    transition: opacity 1.5s;
+    transition: opacity 2s;
   }
   
   .parallax-description {
@@ -32,7 +32,7 @@
     max-width: 80%;
     margin-bottom: 2rem;
     opacity: 0;
-    transition: opacity 2s;
+    transition: opacity 2.5s;
   }
   
   .visible {

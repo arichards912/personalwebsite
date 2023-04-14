@@ -30,6 +30,7 @@ const AboutMePage = () => {
       {sections.map((section, index) => (
         <ParallaxSection
           key={index}
+          index={index}
           image={section.image}
           title={section.title}
           textColor={section.textColor}
