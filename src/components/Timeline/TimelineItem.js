@@ -12,7 +12,6 @@ const TimelineItem = ({title, date, description, details, icon, position, relati
       offset = 4;
     }
   }
-  console.log(posIndex);
   return (
     <div
       className={`timeline-item ${position}`}
