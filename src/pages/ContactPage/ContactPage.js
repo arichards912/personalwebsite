@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {Circle, Line} from 'rc-progress';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedin, faGithub, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import './ContactPage.css';
@@ -18,16 +19,44 @@ function ContactPage() {
     message: false,
   });
 
-  // TODO: Implement on change
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const [percentComplete, setPercentComplete] = useState(0);
 
-    if (name === 'email') {
+  useEffect(() => {
+    // Calculate percent whenever formData or formErrors change
+    let numValid = 0;
+    for (const [key, value] of Object.entries(formErrors)) {
+      if (value === false && formData[key] !== '') {
+        numValid++;
+      }
+    }
+    const percent = (numValid / Object.keys(formData).length) * 100;
+    setPercentComplete(percent);
+  }, [formData, formErrors]);
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+    
+    // Only check error on email if there's already an error - don't want to show error mid-typing
+    if (id === 'email' && formErrors.email) {
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       setFormErrors({ ...formErrors, email: !emailPattern.test(value) });
     } else {
-      setFormErrors({ ...formErrors, [name]: !value });
+      setFormErrors({ ...formErrors, [id]: !value });
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { id, value } = e.target;
+    if (!value) {
+      setFormErrors({ ...formErrors, [id]: true });
+    }
+
+    if (id === 'email') {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      setFormErrors({ ...formErrors, email: !emailPattern.test(value) });
+    } else {
+      setFormErrors({ ...formErrors, [id]: !value });
     }
   };
 
@@ -35,10 +64,10 @@ function ContactPage() {
     e.preventDefault();
 
     const errors = {
-      name: !formData.name,
+      name: formData.name === '',
       email: !formData.email || formErrors.email,
-      subject: !formData.subject,
-      message: !formData.message,
+      subject: formData.subject === '',
+      message: formData.message === '',
     };
 
     setFormErrors(errors);
@@ -48,42 +77,68 @@ function ContactPage() {
     }
   };
 
+  const inputClassName = (id) => `form-control${formErrors[id] ? ' error' : ''}`;
+  const labelClassName = (id) => `form-label${formErrors[id] ? ' error' : ''}`;
+
+
   return (
     <section className="contact-section">
       <h2 className="section-title">Contact</h2>
       <div className = "contact-content">
         <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-floating">
-          <label htmlFor="subject">Subject</label>
-            <input type="text" className="form-control" id="subject" placeholder="Subject" />
-          </div>
-          <div className="form-floating">
-            <label htmlFor="name">Name</label>
-            <input type="text" className="form-control" id="name" placeholder="Name" /> 
-            <label htmlFor="email">Email</label>
-            <input type="email" className="form-control" id="email" placeholder="Email" />
-          </div>
-          <div className="form-floating">
-            <label htmlFor="message">Message</label>
-            <textarea className="form-control" id="message" placeholder="Message" rows="5"></textarea>
-          </div>
+          <label className={labelClassName('subject')} htmlFor="subject">Subject</label>
+          <input
+            type="text"
+            className={inputClassName('subject')}
+            id="subject"
+            placeholder="Subject"
+            value={formData.subject}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+
+          <label className={labelClassName('name')} htmlFor="name">Name</label>
+          <input
+            type="text"
+            className={inputClassName('name')}
+            id="name"
+            placeholder="Jane Doe"
+            value={formData.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+
+          <label className={labelClassName('email')} htmlFor="email">Email</label>
+          <input
+            type="email"
+            className={inputClassName('email')}
+            id="email"
+            placeholder="jane_doe12@snailmail.com"
+            value={formData.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+
+          <label className={labelClassName('message')} htmlFor="message">Message</label>
+          <textarea
+            className={inputClassName('message')}
+            id="message"
+            placeholder="Message"
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
           <button type="submit" className="submit-button" id="contact-submit-button">Send Message</button>
         </form>
 
-        <div className="contact-text">
-            <p>
-            Thank you for considering reaching out to me via the contact form on my software development personal portfolio page! 
-            Filling out this form will allow us to connect and discuss potential collaborations or opportunities in the world of software development. 
-            <br/><br/>
-            By providing your information, we can begin a conversation about how my skills and expertise can benefit your projects or ideas. 
-            I am excited to hear from you and learn more about your goals, so please don't hesitate to reach out. 
-            <br/><br/>
-            Let's work together to bring your vision to life!
-            <br/><br/>
-            Note: Probably want to change this to be an image instead, with a sentence or two below it.
-            </p>
+        <div className="progress-circle">
+          <Circle percent={percentComplete} strokeWidth={8} strokeColor={"var(--accent-color)"} strokeLinecap='round' />
+          <p className='progress-percent'>%</p>
         </div>
+
       </div>
+      
 
 
       <div className="social-media-section">
@@ -104,11 +159,11 @@ function ContactPage() {
           </a>
       </div>
 
+  
       <div className="map-section">
         <iframe
           title="location"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93286.80405388973!2d-88.03764080719772!3d43.057995419050556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880502d7578b47e7%3A0x445f1922b5417b84!2sMilwaukee%2C%20WI!5e0!3m2!1sen!2sus!4v1680775592952!5m2!1sen!2sus"
-          style={{ border: 0 }}
           allowFullScreen={true}
           loading="lazy"
         ></iframe>

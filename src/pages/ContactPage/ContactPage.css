@@ -17,6 +17,15 @@
   flex: 1;
 }
 
+label {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+input {
+  display: inline-block;
+}
+
 .form-floating {
   display: flex;
   flex-direction: column;
@@ -28,8 +37,7 @@
 
 
 .form-control {
-  border: none;
-  border-bottom: 2px solid var(--accent-color);
+  border: 3px solid var(--accent-color);
   transition: border-color 0.3s;
   
   height: 2rem;
@@ -41,18 +49,22 @@
   border-color: var(--dark-color);
 }
 
-.form-control.invalid {
+.form-control.error {
   border-color: red;
+  color: red;
+}
+
+.form-label.error{
+  color: red;
 }
 
 .form-control::placeholder {
-  color: transparent;
+  /*light grey color */
+  color: #a2a2a2;
+  padding-left: 0.5rem;
 }
 
-.form-control:not(:placeholder-shown) + label,
-.form-control:focus + label {
-  transform: translateY(-1.2em) scale(0.8);
-}
+
 .submit-button {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -69,11 +81,23 @@
   background-color: var(--dark-color);
 }
 
-.contact-text {
-  flex: 1;
-  padding: 1rem;
-  border: 1px solid var(--accent-color);
-  border-radius: 0.5rem;
+.progress-circle {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 2rem;
+}
+
+.rc-progress-circle {
+  position: relative;
+  width: 100%;
+}
+
+.progress-percent {
+  display: inline;
+  position: absolute;
+  align-self: center;
+  font-size: 5rem;
 }
 
 @media (min-width: 768px) {
@@ -93,13 +117,15 @@
 
 .social-icon {
   color: var(--accent-color);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   transition: color 0.3s;
 }
 
 .social-icon:hover {
   color: var(--dark-color);
 }
+
+
 
 .map-section {
   margin-top: 2rem;
