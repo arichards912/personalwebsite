@@ -8,6 +8,7 @@ const TypingAnimation = ({ text }) => {
     useEffect(() => {
       let index = 0;
       let firstGo = true;
+      const randomSpeed = Math.floor(Math.random() * 40) + 90;
       const timer = setInterval(() => {
         console.log("index: ", index);
         console.log("text[index]: ", text[index]);
@@ -26,7 +27,7 @@ const TypingAnimation = ({ text }) => {
             clearInterval(timer);
         }
         
-      }, 120); // Customize typing speed (ms)
+      }, randomSpeed); // Customize typing speed (ms)
   
       return () => clearInterval(timer);
     }, [text]);
