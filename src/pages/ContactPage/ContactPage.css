@@ -26,27 +26,18 @@ input {
   display: inline-block;
 }
 
-.form-floating {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  width: 100%;
-  margin: 1rem 0 1rem 0;
-}
-
 
 .form-control {
   border: 3px solid var(--accent-color);
   transition: border-color 0.3s;
-  
+  padding-left: 0.5rem;
   height: 2rem;
   border-radius: 0.5rem;
 }
 
 .form-control:focus {
   outline: none;
-  border-color: var(--dark-color);
+  border-color: var(--light-color);
 }
 
 .form-control.error {
@@ -55,13 +46,12 @@ input {
 }
 
 .form-label.error{
-  color: red;
+  color: firebrick;
 }
 
 .form-control::placeholder {
   /*light grey color */
   color: #a2a2a2;
-  padding-left: 0.5rem;
 }
 
 
@@ -78,7 +68,8 @@ input {
 }
 
 .submit-button:hover {
-  background-color: var(--dark-color);
+  background-color: var(--secondary-light-color);
+  color: var(--accent-color);
 }
 
 .progress-circle {
@@ -99,6 +90,7 @@ input {
   align-self: center;
   font-size: 5rem;
 }
+
 
 @media (min-width: 768px) {
   .contact-content {

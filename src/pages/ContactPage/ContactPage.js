@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {Circle, Line} from 'rc-progress';
+import { useSmoothProgress } from '../../hooks/SmoothProgress/SmoothProgress';
+import { useSmoothColorTransition } from '../../hooks/SmoothColor/SmoothColor';
+import {Circle} from 'rc-progress';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedin, faGithub, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import './ContactPage.css';
@@ -20,6 +22,10 @@ function ContactPage() {
   });
 
   const [percentComplete, setPercentComplete] = useState(0);
+  const animatedPercent = useSmoothProgress(percentComplete);
+  const lowPercentColor = '#ff0000';
+  const highPercentColor = '#228B22';
+
 
   useEffect(() => {
     // Calculate percent whenever formData or formErrors change
@@ -31,7 +37,13 @@ function ContactPage() {
     }
     const percent = (numValid / Object.keys(formData).length) * 100;
     setPercentComplete(percent);
-  }, [formData, formErrors]);
+  }, [formData, formErrors, percentComplete]);
+
+
+  // Use the custom hook to get the smoothly transitioning color
+  const animatedColor = useSmoothColorTransition(lowPercentColor, highPercentColor, percentComplete/100);
+
+
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -133,7 +145,7 @@ function ContactPage() {
         </form>
 
         <div className="progress-circle">
-          <Circle percent={percentComplete} strokeWidth={8} strokeColor={"var(--accent-color)"} strokeLinecap='round' />
+          <Circle percent={animatedPercent} strokeWidth={8} strokeColor={animatedColor} strokeLinecap='round' />
           <p className='progress-percent'>%</p>
         </div>
 
