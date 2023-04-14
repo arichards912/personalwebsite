@@ -9,16 +9,16 @@ const ParallaxSection = ({index, image, title, textColor, description }) => {
         textColor = "white";
     }
 
-  const onScroll = () => {
-    const rect = document.getElementById(title).getBoundingClientRect();
-    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
   useEffect(() => {
+
+    const onScroll = () => {
+      const rect = document.getElementById(title).getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
     // Set the first section to be visible
     if (index === 0) {
       setIsVisible(true);
@@ -27,7 +27,7 @@ const ParallaxSection = ({index, image, title, textColor, description }) => {
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
-  }, [index, onScroll]);
+  }, [index, title]);
 
   return (
     <div className="parallax-section" style={{ backgroundImage: `url(${image})` }}>
