@@ -18,7 +18,6 @@ const mixColors = (color1, color2, progress) => {
 
 export const useSmoothColorTransition = (color1, color2, progress, duration = 100) => {
   const [currentColor, setCurrentColor] = useState(mixColors(color1, color2, progress));
-  console.log("currentColor: ", currentColor);
 
   useEffect(() => {
     let start;
