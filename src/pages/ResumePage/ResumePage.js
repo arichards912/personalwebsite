@@ -65,7 +65,6 @@ const ResumePage = () => {
 
   return (
     <div className="resume-page">
-      <h2 className="section-title">Resume Timeline</h2>
       <a className="download-button" href="/docs/Alexander_Richards_Resume.pdf" download="RichardsResume.pdf">Download Resume</a>
 
       <Timeline items={resumeItems} />

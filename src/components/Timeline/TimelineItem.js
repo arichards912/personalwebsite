@@ -21,7 +21,7 @@ const TimelineItem = ({title, date, description, details, icon, position, relati
         {icon}
       </div>
       <div className="timeline-info">
-        <div className="timeline-content">
+        <div className="timeline-content" style={{border: `solid 4px ${color}`}}>
           <h3>{title}</h3>
           <h5>{date}</h5>
           <p>{description}</p>
@@ -30,6 +30,10 @@ const TimelineItem = ({title, date, description, details, icon, position, relati
           </div>
         </div>
       </div>
+      <div
+        className={`timeline-connector ${position}`}
+        style={{backgroundColor: color}}
+      ></div>
       <div
         className={`timeline-duration ${position}`}
         style={{ height: `${duration}px`,  backgroundColor: color, [position === 'left' ? 'marginRight' : 'marginLeft']: `${offset}px`}}

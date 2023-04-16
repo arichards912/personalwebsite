@@ -11,19 +11,18 @@
     bottom: 0;
     right: 0;
     padding: 1rem 3rem;
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
     color: var(--light-color);
-    border-radius: 10px;;
-    font-size: var(--font-size-normal);
-    border: none;
+    border-radius: 2rem;
+    font-size: 1.2rem;
     cursor: pointer;
     margin: 3rem;
     z-index: 5;
-    border: solid 1px var(--secondary-color)
+    border: solid 2px var(--primary-color)
   }
 
   .download-button:hover {
     background-color: var(--secondary-light-color);
-    color: var(--secondary-color);
+    color: var(--accent-color);
   }
   

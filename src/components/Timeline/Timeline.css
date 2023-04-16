@@ -4,7 +4,7 @@
     align-items: center;
     position: relative;
     color: var(--secondary-color);
-    background-color: var(--light-color);
+    background-color: var(--secondary-color);
     overflow: hidden;
   }
   
@@ -13,7 +13,7 @@
     content: '';
     position: absolute;
     width: 4px;
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-light-color);
     left: 50%;
     z-index: 1;
   }
