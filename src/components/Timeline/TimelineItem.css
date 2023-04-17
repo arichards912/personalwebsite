@@ -45,21 +45,32 @@
     color: #fff;
     
   }
-
-
-  .timeline-info {
-    position: relative;
-    max-width: 50%;
-    z-index: 1;
-    margin: 0 calc(10%);
-  }
   
+  @media (max-width: 850px) {
+    .timeline-info {
+      position: relative;
+      max-width: 80%;
+      z-index: 1;
+      margin: 0 calc(10%);
+    }
+  }
+    
+  @media (min-width : 850px) {
+    .timeline-info {
+      position: relative;
+      max-width: 50%;
+      z-index: 1;
+      margin: 0 calc(10%);
+    }
+  }
+
 
   .timeline-content {
     width: 100%;
     padding: 2rem;
     border-radius: 2rem;
     background-color: #f9f9f9;
+    line-height: 30px;
     z-index: 3;
   }
   

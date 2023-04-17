@@ -27,7 +27,7 @@ const TimelineItem = ({title, date, description, details, icon, position, relati
           <p>{description}</p>
           <ul className="timeline-details">
             {details.map((detail, index) => (
-              <li key={index} style={{transform: `translateY(${((index + 1) * 140) - 90}px)`, transition: `all 0.5s ease ${index*0.1}s`}}>{detail}</li>
+              <li key={index} style={{transform: `translateY(${((index + 1) * 160) - 90}px)`, transition: `all 0.5s ease ${index*0.1}s`}}>{detail}</li>
             ))}
           </ul>
         </div>
