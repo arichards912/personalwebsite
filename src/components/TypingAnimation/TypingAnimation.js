@@ -10,9 +10,6 @@ const TypingAnimation = ({ text }) => {
       let firstGo = true;
       const randomSpeed = Math.floor(Math.random() * 40) + 90;
       const timer = setInterval(() => {
-        console.log("index: ", index);
-        console.log("text[index]: ", text[index]);
-        console.log("First go: ", firstGo)
         if (index < text.length - 1) {
             setDisplayedText((prevText) => prevText + text[index]);
             if(index !== 1 || firstGo === false) {
