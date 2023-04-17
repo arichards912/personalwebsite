@@ -19,11 +19,11 @@
   }
 
   .leftSlideIn {
-    animation: slideInLeft 1.5s ease-out forwards;
+    animation: slideInLeft 2s ease-out forwards;
   }
 
   .rightSlideIn {
-    animation: slideInRight 1.5s ease-out forwards;
+    animation: slideInRight 2s ease-out forwards;
   }
   
   .timeline-item.left .timeline-icon,
