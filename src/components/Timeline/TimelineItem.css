@@ -64,29 +64,28 @@
   }
   
   
-  .timeline-details {
+  .timeline-details li{
     position: absolute;
     background-color: var(--seconary-color);
     color: var(--secondary-light-color);
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 4;
     visibility: hidden;
     opacity: 0;
-    transform: translateY(0%);
-    transition: all 0.5s ease;
     pointer-events: none;
   }
 
   
-  .timeline-content:hover .timeline-details {
+  .timeline-content:hover .timeline-details li{
     visibility: visible;
     opacity: 1;
     transform: translateY(100%);
     transition: all 0.5s ease;
-    z-index: 2;
+    z-index: 4;
   }
+
 
   .timeline-connector {
     position: absolute;

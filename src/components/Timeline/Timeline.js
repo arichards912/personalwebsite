@@ -92,13 +92,13 @@ const Timeline = ({ items }) => {
   const sortedItems = getSortedItems();
   const offsetIndices = calculateOffsetIndices(sortedItems, positions);
   const colors = generateDistinctColors(items.length);
-  const timelineBuffer = 400;
+  const timelineBuffer = 800;
 
   useEffect(() => {
     const timelineElement = timelineRef.current;
     if (timelineElement) {
       const windowHeight = window.innerHeight;
-      const calculatedHeight = Math.max(timelineElement.clientHeight, windowHeight * 2);
+      const calculatedHeight = Math.max(timelineElement.clientHeight, windowHeight * 3);
       setTimelineHeight(calculatedHeight);
     }
   }, [timelineRef]);
