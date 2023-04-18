@@ -3,7 +3,7 @@ import TypingAnimation from '../../components/TypingAnimation/TypingAnimation';
 import * as THREE from 'three';
 import NET from "vanta/dist/vanta.net.min";
 
-import headshot from '../../media/headshot-bw.png';
+import headshot from '../../media/headshot-bw2.png';
 
 import '../../App.css';
 import './LandingPage.css';
