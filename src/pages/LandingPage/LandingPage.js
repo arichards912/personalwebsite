@@ -3,6 +3,8 @@ import TypingAnimation from '../../components/TypingAnimation/TypingAnimation';
 import * as THREE from 'three';
 import NET from "vanta/dist/vanta.net.min";
 
+import headshot from '../../media/headshot-bw.png';
+
 import '../../App.css';
 import './LandingPage.css';
 
@@ -39,7 +41,10 @@ function LandingPage() {
 
   return (
     <div className='landing-bg'>
-      <TypingAnimation text="Alexander Richards - Software Engineer" />
+       <img src={headshot} alt="headshot" className="headshot-img" />
+       <div className="typing-spacing">
+        <TypingAnimation text="Alexander Richards - Software Engineer" />
+      </div>
     </div>
   );
 }

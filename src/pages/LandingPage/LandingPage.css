@@ -3,7 +3,7 @@
   height: 96vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
@@ -19,6 +19,21 @@
   justify-content: center;
 }
 
+.headshot-img {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  animation: fadeIn 2s;
+  margin-bottom: 3rem;
+}
+
+.typing-spacing {
+  height: 16rem;
+}
+
+
 h1 {
   animation: fadeIn 2s;
   padding: 1rem;
@@ -29,12 +44,6 @@ h1 {
   text-align: center;
 }
 
-.intro-text {
-  font-size: var(--font-size-normal);
-  width: 50vw;
-  animation: fadeIn 2s;
-  padding: 1rem;
-}
 
 
 @keyframes fadeIn {
