@@ -3,11 +3,15 @@ import "./ParallaxSection.css";
 
 const ParallaxSection = ({index, image, title, textColor, description }) => {
   const [isVisible, setIsVisible] = useState(false);
-
-  // If textColor doesn't exist, set it to white
+    let bgColor = "rgba(255, 255, 255, 0.25)"
+    // If textColor doesn't exist, set it to white
     if (!textColor) {
         textColor = "white";
     }
+    if(textColor === "white") {
+      bgColor = "rgba(0, 0, 0, 0.25)"
+    }
+
 
   useEffect(() => {
 
@@ -35,7 +39,7 @@ const ParallaxSection = ({index, image, title, textColor, description }) => {
         <h2 className={`parallax-title ${"item-" + index} ${isVisible ? "visible" : ""}`} id={title} style={{color: `${textColor}`}}>
             {title}
         </h2>
-        <p className={`parallax-description ${"item-" + index} ${isVisible ? "visible" : ""}`} style={{color: `${textColor}`}}>
+        <p className={`parallax-description ${"item-" + index} ${isVisible ? "visible" : ""}`} style={{color: `${textColor}`, backgroundColor: `${bgColor}`}}>
             {description}
         </p>
       </div>

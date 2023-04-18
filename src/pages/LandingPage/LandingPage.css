@@ -25,7 +25,7 @@
   height: 250px;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
-  animation: fadeIn 2s;
+  animation: headshotFadeIn 2.5s ease;
   margin-bottom: 3rem;
 }
 
@@ -42,6 +42,17 @@ h1 {
   position: relative;
   color: var(--light-color);
   text-align: center;
+}
+
+@keyframes headshotFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
