@@ -1,0 +1,20 @@
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  font-size: 3rem;
+  font-style: italic;
+}
+
+
+@media (max-width: 768px) {
+    .contact-container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .contact-container {
+        width: 50%;
+    }
+}

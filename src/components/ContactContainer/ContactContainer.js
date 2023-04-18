@@ -1,0 +1,75 @@
+import React, { useState, useEffect } from "react";
+import ContactPane from "./ContactPane";
+import "./ContactContainer.css";
+
+function ContactContainer({ onProgressChange = () => {} }) {
+  const [activePanel, setActivePanel] = useState(0);
+
+  const panels = [
+    {
+      type: "text",
+      title: "What's your name?",
+      placeholder: "Jane Doe",
+      regex: "^.{1,50}$",
+    },
+    {
+      type: "email",
+      title: "What's your email?",
+      placeholder: "janeDoe@snailmail.com",
+      regex: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+    },
+    {
+      type: "text",
+      title: "What's your message?",
+      placeholder: "message",
+      regex: "^.{1,200}$",
+    },
+    {
+      type: "submit",
+      title: "Ready to submit?",
+    },
+  ];
+
+  const handleNext = () => {
+    setActivePanel((prevActivePanel) => prevActivePanel + 1);
+  };
+
+  const handlePrev = () => {
+    setActivePanel((prevActivePanel) => prevActivePanel - 1);
+  };
+
+  const handleSubmit = () => {
+    console.log("Form submitted");
+    // Handle form submission logic here
+  };
+
+
+
+  useEffect(() => {
+    const updateProgress = () => {
+      const percentage = (activePanel / (panels.length - 1)) * 100;
+      onProgressChange(percentage);
+    };
+
+    updateProgress();
+  }, [activePanel, onProgressChange, panels.length]);
+
+  return (
+    <div className="contact-container">
+      <h1 className="contact-title">Hi, let's get in touch!</h1>
+      {panels.map((panel, index) => (
+        <div key={index} style={{ display: activePanel === index ? "block" : "none" }}>
+          <ContactPane
+            index={index}
+            {...panel}
+            onNext={handleNext}
+            onPrev={handlePrev}
+            onSubmit={handleSubmit}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default ContactContainer;

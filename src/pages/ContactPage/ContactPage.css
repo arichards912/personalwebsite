@@ -1,11 +1,12 @@
 .contact-section {
-  padding: 2rem 0;
+  padding-top: 2rem;
+  height: 98vh;
 }
 
 .contact-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 2rem;
   padding: 0 1rem 0 1rem;
 }
@@ -17,60 +18,6 @@
   flex: 1;
 }
 
-label {
-  color: var(--accent-color);
-  font-weight: bold;
-}
-
-input {
-  display: inline-block;
-}
-
-
-.form-control {
-  border: 3px solid var(--accent-color);
-  transition: border-color 0.3s;
-  padding-left: 0.5rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--light-color);
-}
-
-.form-control.error {
-  border-color: red;
-  color: red;
-}
-
-.form-label.error{
-  color: firebrick;
-}
-
-.form-control::placeholder {
-  /*light grey color */
-  color: #a2a2a2;
-}
-
-
-.submit-button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: var(--accent-color);
-  color: var(--light-color);
-  font-size: var(--font-size-normal);
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 0.5rem;
-}
-
-.submit-button:hover {
-  background-color: var(--secondary-light-color);
-  color: var(--accent-color);
-}
 
 .progress-circle {
   display: flex;
@@ -98,13 +45,24 @@ input {
   }
 }
 
+.contact-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
 
 .social-media-section {
   display: flex;
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  z-index: 2;
+  background-color: var(--secondary-light-color);
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 1rem;
-  margin-top: 2rem;
+  padding: 0.2rem 0;
 }
 
 .social-icon {
@@ -114,20 +72,19 @@ input {
 }
 
 .social-icon:hover {
-  color: var(--dark-color);
+  color: var(--secondary-color);
 }
-
 
 
 .map-section {
   margin-top: 2rem;
+  height: 100%;
   position: relative;
   overflow: hidden;
-  padding-top: 56.25%;
+  padding-top: 2rem;
 }
 
 .map-section iframe {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
