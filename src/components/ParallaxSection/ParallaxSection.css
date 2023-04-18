@@ -38,7 +38,7 @@
   }
   
   /* transition opacity 0-100% over 2s */
-  .visible {
+  .visible-aboutMe {
     animation: aboutMeFadeIn 3s ease-out forwards;
   }
   

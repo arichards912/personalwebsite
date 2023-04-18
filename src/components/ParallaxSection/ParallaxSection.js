@@ -36,10 +36,10 @@ const ParallaxSection = ({index, image, title, textColor, description }) => {
   return (
     <div className="parallax-section" style={{ backgroundImage: `url(${image})` }}>
       <div className="parallax-content">
-        <h2 className={`parallax-title ${"item-" + index} ${isVisible ? "visible" : ""}`} id={title} style={{color: `${textColor}`}}>
+        <h2 className={`parallax-title ${"item-" + index} ${isVisible ? "visible-aboutMe" : ""}`} id={title} style={{color: `${textColor}`}}>
             {title}
         </h2>
-        <p className={`parallax-description ${"item-" + index} ${isVisible ? "visible" : ""}`} style={{color: `${textColor}`, backgroundColor: `${bgColor}`}}>
+        <p className={`parallax-description ${"item-" + index} ${isVisible ? "visible-aboutMe" : ""}`} style={{color: `${textColor}`, backgroundColor: `${bgColor}`}}>
             {description}
         </p>
       </div>

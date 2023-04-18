@@ -154,7 +154,7 @@
   }
 
   .visible {
-    animation: slideInTop 6s ease-out forwards;
+    animation: slideInTop 6s ease forwards;
   }
   
   .timeline-duration.left {
