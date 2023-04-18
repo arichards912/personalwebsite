@@ -19,4 +19,5 @@
   
   .typing-container {
     width: 70vw;
+    max-width: 1400px;
   }
