@@ -24,7 +24,7 @@ function ContactPage() {
 
   return (
     <section className="contact-section">
-      <h1 className="contact-title">Hi, let's get in touch!</h1>
+      <h1 className="contact-title faded-round-corner">Hi, let's get in touch!</h1>
       <div className = "contact-content">
         <ContactContainer onProgressChange={handleProgressChange} />
 
@@ -32,9 +32,11 @@ function ContactPage() {
           <Circle percent={animatedPercent} strokeWidth={8} strokeColor={animatedColor} strokeLinecap='round' />
           <p className='progress-percent'>%</p>
         </div>
+        
 
       </div>
 
+      <p className='footer-text'>...or, reach out to me here:</p>
       <div className="social-media-section">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
           <FontAwesomeIcon icon={faFacebook} />

@@ -1,18 +1,19 @@
 .panel-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 3fr 2fr 1fr;
     grid-template-areas:
         "title title title"
         "input input input"
         "back gap next";
     align-content: center;
-    gap: 1rem;
+    row-gap: 4rem;
 }
 
 .panel-title {
     grid-area: title;
     color: var(--accent-color);
+    align-self: sta;
 }
 
 .contact-input {
@@ -26,13 +27,11 @@
 
 
 .back-button {
-    margin-left: 2rem;
     grid-area: back;
 }
 
 .forward-button {
     grid-area: next;
-    margin-right: 2rem;
 }
 
 .progress-button {
@@ -42,19 +41,10 @@
     border-radius: 2rem;
     font-size: 1.2rem;
     cursor: pointer;
-    z-index: 5;
+    z-index: 3;
     border: solid 2px var(--primary-color)
 }
 
-@media (min-width: 2500px) {
-    .back-button{
-        margin-left: 10rem;
-    }
-
-    .forward-button {
-        margin-right: 10rem;
-    }
-}
 
 
 
