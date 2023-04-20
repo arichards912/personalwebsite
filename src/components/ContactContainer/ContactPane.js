@@ -29,24 +29,24 @@ function ContactPane({ index, type, title, placeholder, regex = "", onNext, onPr
 
   return (
     <div>
+      <div className="panel-grid">
       <h1 className="panel-title">{title}</h1>
-      {type !== "submit" && (
-        <input
-          className="contact-input"
-          type={type}
-          placeholder={placeholder}
-          value={inputValue}
-          onChange={handleChange}
-        />
-      )}
-      <div className="button-container">
-            <button className="progress-button back-button" disabled={index === 0} onClick={onPrev}>
+        {type !== "submit" && (
+          <input
+            className="contact-input"
+            type={type}
+            placeholder={placeholder}
+            value={inputValue}
+            onChange={handleChange}
+          />
+        )}
+        <button className="progress-button back-button" disabled={index === 0} onClick={onPrev}>
             Back
-            </button>
-            <button className="progress-button forward-button" disabled={!isValid && type !== "submit"} onClick={handleClickNext}>
+        </button>
+        <button className="progress-button forward-button" disabled={!isValid && type !== "submit"} onClick={handleClickNext}>
                 {type === "submit" ? "Submit" : "Next"}
             </button> 
-        </div>
+      </div>
     </div>
   );
 }
