@@ -24,6 +24,7 @@ function ContactPage() {
 
   return (
     <section className="contact-section">
+      <h1 className="contact-title">Hi, let's get in touch!</h1>
       <div className = "contact-content">
         <ContactContainer onProgressChange={handleProgressChange} />
 
@@ -34,16 +35,6 @@ function ContactPage() {
 
       </div>
 
-      <div className="contact-footer">
-        <div className="map-section">
-          <iframe
-            title="location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93286.80405388973!2d-88.03764080719772!3d43.057995419050556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880502d7578b47e7%3A0x445f1922b5417b84!2sMilwaukee%2C%20WI!5e0!3m2!1sen!2sus!4v1680775592952!5m2!1sen!2sus"
-            allowFullScreen={true}
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
       <div className="social-media-section">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
           <FontAwesomeIcon icon={faFacebook} />

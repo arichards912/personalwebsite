@@ -1,11 +1,3 @@
-.contact-title {
-  margin-bottom: 1rem;
-  display: inline-block;
-  font-size: 5rem;
-  font-style: italic;
-}
-
-
 @media (max-width: 768px) {
     .contact-container {
         width: 100%;
