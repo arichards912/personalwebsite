@@ -65,7 +65,11 @@
   }
 
   .timeline-info {
-    display: none;
+      display: none;
+      position: relative;
+      max-width: 50%;
+      z-index: 1;
+      margin: 0 calc(10%);
   }
 
   .timeline-info.animate.left {
@@ -83,18 +87,21 @@
       position: relative;
       max-width: 70%;
       z-index: 1;
-      margin: 0 calc(15%);
+    }
+
+    .timeline-info.right {
+      margin-left: calc(30%);
+      margin-right: calc(5%);
+    }
+
+    .timeline-info.left {
+      margin-right: calc(30%);
+      margin-left: calc(5%);
+
     }
   }
     
-  @media (min-width : 850px) {
-    .timeline-info {
-      position: relative;
-      max-width: 50%;
-      z-index: 1;
-      margin: 0 calc(10%);
-    }
-  }
+
 
 
   .timeline-content {
