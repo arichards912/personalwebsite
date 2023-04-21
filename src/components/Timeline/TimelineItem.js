@@ -12,10 +12,7 @@ function isInViewport(element) {
 }
 
 function handleScroll() {
-  // TODO: change so that it selects all elements w/ timeline-item, then adds "animate" to children classes
   const itemElements = document.querySelectorAll('.timeline-item');
-  const leftElements = document.querySelectorAll('.timeline-item.left');
-  const rightElements = document.querySelectorAll('.timeline-item.right');
 
   for (const element of itemElements) {
     if (isInViewport(element)) {
