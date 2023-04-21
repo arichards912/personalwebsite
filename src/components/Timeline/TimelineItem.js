@@ -4,10 +4,12 @@ import './TimelineItem.css';
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  console.log(rect);
+  console.log(windowHeight);
 
   return (
     rect.top >= 0 &&
-    rect.bottom <= windowHeight
+    rect.bottom <= windowHeight - 400
   );
 }
 

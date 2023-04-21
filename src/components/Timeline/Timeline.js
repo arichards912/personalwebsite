@@ -101,7 +101,7 @@ const Timeline = ({ items }) => {
   const sortedItems = getSortedItems();
   const offsetIndices = calculateOffsetIndices(sortedItems, positions);
   const colors = generateDistinctColors(items.length);
-  const timelineBuffer = 600;
+  const timelineBuffer = 800;
 
   useEffect(() => {
     const timelineElement = timelineRef.current;
