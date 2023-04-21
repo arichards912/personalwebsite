@@ -79,8 +79,8 @@ const TimelineItem = ({title, date, description, details, icon, side, actualPosi
       </div>
       <div ref={infoRef} className={`timeline-info ${side} ${posIndex === 0 ? 'animate' : ''}`}>
         <div className="timeline-content" style={{border: `solid 6px ${color}`}}>
-          <h3>{title}</h3>
-          <h5>{date}</h5>
+          <h2>{title}</h2>
+          <h4>{date}</h4>
           <p>{description}</p>
           <ul className="timeline-details">
             {details.map((detail, index) => (
