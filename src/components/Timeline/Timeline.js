@@ -44,6 +44,18 @@ const Timeline = ({ items }) => {
     return colors;
   };
 
+  const generateYearLabels = () => {
+    const currentYear = new Date().getFullYear();
+    const startYear = currentYear - (currentYear % 5);
+    const yearLabels = [];
+    for (let year = startYear; year >= 2015; year -= 5) {
+      yearLabels.push(year);
+    }
+    return yearLabels;
+  };
+  
+  
+
   const calculateOffsetIndices = (items, positions) => {
     const offsetIndices = Array(items.length).fill(0);
     for (let i = 0; i < items.length; i++) {
@@ -118,6 +130,19 @@ const Timeline = ({ items }) => {
         className="timeline-line"
         style={{ height: `${timelineHeight + timelineBuffer}px`}}
       ></div>
+      {generateYearLabels().map((year) => {
+        const yearDate = new Date(year, 0, 1);
+        const yPos = calculateRelativePosition(yearDate) * timelineHeight;
+        return (
+          <div
+            className="year-label"
+            key={year}
+            style={{ top: yPos }}
+          >
+            {year}
+          </div>
+        );
+      })}
       {items.map((item, index) => (
         <TimelineItem
           key={index}

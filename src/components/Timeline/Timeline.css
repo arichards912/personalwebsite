@@ -17,5 +17,16 @@
     left: 50%;
     z-index: 1;
   }
+
+  .year-label {
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    font-size: 65px; 
+    color: var(--primary-color);
+    left: calc(50%);
+    white-space: nowrap;
+  }
+  
   
   
