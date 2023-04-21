@@ -117,9 +117,8 @@ const Timeline = ({ items }) => {
           description={item.description}
           details={item.details}
           icon={item.icon}
-          position={positions[index]}
-          relativePosition={calculateRelativePosition(item.endDate)}
-          totalHeight={timelineHeight}
+          side={positions[index]}
+          actualPosition={calculateRelativePosition(item.endDate) * timelineHeight}
           posIndex={index}
           duration={calculateIndividualDuration(item.startDate, item.endDate)}
           color={colors[index]}

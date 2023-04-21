@@ -30,7 +30,7 @@ window.addEventListener('scroll', handleScroll);
 // Call handleScroll on page load to check if elements are in view initially
 handleScroll();
 
-const TimelineItem = ({title, date, description, details, icon, position, relativePosition, totalHeight, duration, color, posIndex, offsetIndex }) => {
+const TimelineItem = ({title, date, description, details, icon, side, actualPosition, duration, color, posIndex, offsetIndex }) => {
   const infoRef = useRef(null);
   const connectorRef = useRef(null);
   const durationRef = useRef(null);
@@ -62,7 +62,7 @@ const TimelineItem = ({title, date, description, details, icon, position, relati
   let offset = 11 * offsetIndex;
   console.log("offsetindex: ", offsetIndex);
   if (offset === 0) {
-    if (position === 'left') {
+    if (side === 'left') {
       offset = 0;
     }  
     else {
@@ -71,14 +71,11 @@ const TimelineItem = ({title, date, description, details, icon, position, relati
   }
 
   return (
-    <div
-      className={`timeline-item ${position}`}
-      style={{ top: `${relativePosition * totalHeight}px`}}
-    >
-      <div className={`timeline-icon ${position} ${posIndex === 0 ? 'animate' : ''}`} style={{backgroundColor: color}}>
+    <div className={`timeline-item ${side}`} style={{ top: `${actualPosition}px`}}>
+      <div className={`timeline-icon ${side} ${posIndex === 0 ? 'animate' : ''}`} style={{backgroundColor: color}}>
         {icon}
       </div>
-      <div ref={infoRef} className={`timeline-info ${position} ${posIndex === 0 ? 'animate' : ''}`}>
+      <div ref={infoRef} className={`timeline-info ${side} ${posIndex === 0 ? 'animate' : ''}`}>
         <div className="timeline-content" style={{border: `solid 6px ${color}`}}>
           <h3>{title}</h3>
           <h5>{date}</h5>
@@ -90,15 +87,11 @@ const TimelineItem = ({title, date, description, details, icon, position, relati
           </ul>
         </div>
       </div>
-      <div
-        ref={connectorRef}
-        className={`timeline-connector ${position}`}
-        style={{backgroundColor: color}}
-      ></div>
-      <div className={`timeline-duration-container ${position}`} style={{ height: `${duration}px`}}>
+      <div ref={connectorRef} className={`timeline-connector ${side}`} style={{backgroundColor: color}}></div>
+      <div className={`timeline-duration-container ${side}`} style={{ height: `${duration}px`}}>
         <div
-          ref={durationRef} className={`timeline-duration ${position} ${posIndex === 0 ? 'visible' : ''}`}
-          style={{ height: `${duration}px`,  backgroundColor: color, [position === 'left' ? 'marginRight' : 'marginLeft']: `${offset}px`}}
+          ref={durationRef} className={`timeline-duration ${side} ${posIndex === 0 ? 'visible' : ''}`}
+          style={{ height: `${duration}px`,  backgroundColor: color, [side === 'left' ? 'marginRight' : 'marginLeft']: `${offset}px`}}
         ></div>
       </div>
       
