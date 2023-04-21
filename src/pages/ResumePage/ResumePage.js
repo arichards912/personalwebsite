@@ -60,7 +60,14 @@ const ResumePage = () => {
       details: ['Strengthened programming fundamentals for software development', 'Enhanced understanding of data structures for efficient problem-solving', 'Expanded technical knowledge to support future career growth'],
       icon: '🎓',
     },
-    // TODO: Add more (actual) items here...
+    {
+      title: 'Origin of the Universe',
+      startDate: '13.8 Billion Years Ago',
+      endDate: 'Never',
+      description: 'The universe began with a singularity, which expanded into the universe we know today - eventually producing software developers, and also coffee.',
+      details: [],
+      icon: '💥',
+    }
   ];
 
   return (

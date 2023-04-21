@@ -10,6 +10,10 @@ const Timeline = ({ items }) => {
     if (date === "Present") {
       return new Date();
     }
+    else if (date === "Never" || date === "13.8 Billion Years Ago") {
+      // Return a a date from 2010 so it is sufficiently far in the past
+      return new Date(2012, 1, 1);
+    }
     return new Date(date);
   };
 
@@ -59,7 +63,7 @@ const Timeline = ({ items }) => {
   
 
   const calculateDuration = () => {
-    const minStartDate = Math.min(...items.map(item => new Date(item.startDate).getTime()));
+    const minStartDate = Math.min(...items.map(item => parseDate(item.startDate).getTime()));
     const maxEndDate = Math.max(...items.map(item => parseDate(item.endDate).getTime()));
     return maxEndDate - minStartDate;
   };
@@ -78,27 +82,32 @@ const Timeline = ({ items }) => {
     return relativePosition;
   };
 
-  // Todo: change so it only takes in one date
   const getDateString = (date) => {
+    if(date === "Present" || date === "13.8 Billion Years Ago") {
+      return date;
+    }
+    else if (date === "Never") {
+      return "Ongoing";
+    }
     /* return a string in the form month-start year-start - month-end year-end */
     const dateObj = new Date(date);
     const month = dateObj.toLocaleString('default', { month: 'long' });
     const year = dateObj.getFullYear();
     return `${month} ${year}`;
   };
-  
+
 
   const positions = calculatePositions();
   const sortedItems = getSortedItems();
   const offsetIndices = calculateOffsetIndices(sortedItems, positions);
   const colors = generateDistinctColors(items.length);
-  const timelineBuffer = 800;
+  const timelineBuffer = 600;
 
   useEffect(() => {
     const timelineElement = timelineRef.current;
     if (timelineElement) {
       const windowHeight = window.innerHeight;
-      const calculatedHeight = Math.max(timelineElement.clientHeight, windowHeight * 3.2);
+      const calculatedHeight = Math.max(timelineElement.clientHeight, windowHeight * 3.6);
       setTimelineHeight(calculatedHeight);
     }
   }, [timelineRef]);
@@ -113,7 +122,7 @@ const Timeline = ({ items }) => {
         <TimelineItem
           key={index}
           title={item.title}
-          date={`${getDateString(item.startDate)} - ${item.endDate === "Present" ? "Present" : getDateString(item.endDate)}`}
+          date={`${getDateString(item.startDate)} - ${getDateString(item.endDate)}`}
           description={item.description}
           details={item.details}
           icon={item.icon}
