@@ -33,6 +33,7 @@
     
     .nav-links.open {
       display: flex;
+      animation: navbarOpen 0.8s ease;
     }
   }
 
@@ -64,6 +65,7 @@
     top: 1rem;
     right: 2rem;
     font-size: 2rem;
+    z-index: 5;
     cursor: pointer;
     color: var(--secondary-color);
   }
@@ -71,5 +73,26 @@
   @media (max-width: 768px) {
     .hamburger {
       display: block;
+    }
+  }
+
+  @keyframes navbarOpen {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+
+  }
+
+  @keyframes navbarClose {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
     }
   }
