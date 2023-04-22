@@ -70,31 +70,32 @@
 
 }
 
-.footer-text {
-  margin: 0.5rem;
-  position: fixed;
-  bottom: 6.3rem;
-  left: 5vw;
-  font-size: 1.5rem;
-}
 
 
 .social-media-section {
   display: flex;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   bottom: 0;
   z-index: 4;
-  background-color: var(--secondary-light-color);
   flex-direction: row;
   justify-content: space-evenly;
   gap: 1rem;
-  padding: 0.8rem 0;
+  padding: 0 20%;
+  margin: 3rem 0;
 }
 
 .social-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-light-color);
   color: var(--accent-color);
   font-size: 3rem;
+  padding: 1rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
   transition: color 0.4s;
 }
 

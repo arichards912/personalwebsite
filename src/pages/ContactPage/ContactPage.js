@@ -41,7 +41,6 @@ function ContactPage() {
 
       </div>
 
-      <p className='footer-text'>...or, reach out to me here:</p>
       <div className="social-media-section">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
           <FontAwesomeIcon icon={faFacebook} />
