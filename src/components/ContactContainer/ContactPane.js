@@ -28,9 +28,12 @@ function ContactPane({ index, type, title, placeholder, regex = "", onNext, onPr
   };
 
   return (
-    <div>
-      <div className="panel-grid">
-      <h1 className="panel-title">{title}</h1>
+    <div className="content-internal">
+      <div className="input-content">
+
+      
+        <h1 className="panel-title">{title}</h1>
+        
         {type !== "submit" && (
           <input
             className="contact-input"
@@ -40,13 +43,14 @@ function ContactPane({ index, type, title, placeholder, regex = "", onNext, onPr
             onChange={handleChange}
           />
         )}
-        <button className="progress-button back-button" disabled={index === 0} onClick={onPrev}>
-            Back
-        </button>
-        <button className="progress-button forward-button" disabled={!isValid && type !== "submit"} onClick={handleClickNext}>
-                {type === "submit" ? "Submit" : "Next"}
-            </button> 
       </div>
+      <button className="progress-button back-button" disabled={index === 0} onClick={onPrev}>
+          {"<"}
+      </button>
+      <button className="progress-button forward-button" disabled={!isValid && type !== "submit"} onClick={handleClickNext}>
+              {type === "submit" ? "✔" : ">"}
+      </button>
+      
     </div>
   );
 }

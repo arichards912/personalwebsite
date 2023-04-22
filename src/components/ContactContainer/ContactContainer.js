@@ -57,7 +57,7 @@ function ContactContainer({ onProgressChange = () => {} }) {
   return (
     <div className="contact-container">
       {panels.map((panel, index) => (
-        <div key={index} style={{ display: activePanel === index ? "block" : "none" }}>
+        <div className="panel" key={index} style={{ display: activePanel === index ? "block" : "none" }}>
           <ContactPane
             index={index}
             {...panel}

@@ -1,49 +1,64 @@
-.panel-grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 3fr 2fr 1fr;
-    grid-template-areas:
-        "title title title"
-        "input input input"
-        "back gap next";
-    align-content: center;
-    row-gap: 4rem;
+.content-internal {
+    width: 100%;
+    height: 100%;
 }
 
+.input-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+
 .panel-title {
-    grid-area: title;
     color: var(--accent-color);
     align-self: sta;
 }
 
 .contact-input {
-    grid-area: input;
     height: 4rem;
     font-size: 1.2rem;
+    width: 90%;
     border-radius: 2rem;
     border: solid 4px var(--accent-color);
     padding: 0.5rem 2rem;
 }
 
+.progress-button {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 5rem;
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    border-radius: 50%;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 3;
+    border: solid 2px var(--primary-color);
+}
+
 
 .back-button {
-    grid-area: back;
+    position: relative;
+    float: left;
+    left: -4.5rem;
+    bottom: 50%;
 }
 
 .forward-button {
-    grid-area: next;
+    position: relative;
+    float: right;
+    right: -4.5rem;
+    bottom: 50%;
 }
 
-.progress-button {
-    padding: 0.4rem 2.5rem;
-    background-color: var(--accent-color);
-    color: var(--light-color);
-    border-radius: 2rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    z-index: 3;
-    border: solid 2px var(--primary-color)
-}
+
 
 
 
