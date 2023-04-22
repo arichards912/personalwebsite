@@ -32,6 +32,10 @@
   margin: 1rem 0;
 }
 
+.rc-progress-line {
+  box-shadow: -0.6rem 0.6rem 0.7rem rgba(0, 0, 0, 0.5);
+}
+
 .contact-content-container {
   display: flex;
   justify-content: center;
@@ -51,7 +55,9 @@
   gap: 2rem;
   padding: 2rem;
   margin: 1rem 15%;
-  border: 3px solid var(--secondary-light-color);
+  border: 4px solid var(--secondary-light-color);
+  background-color: var(--secondary-light-color);
+  box-shadow: -1rem 1rem 1.4rem rgba(0, 0, 0, 0.6);
   border-radius: 2rem;
 }
 
@@ -83,6 +89,7 @@
   height: 5rem;
   border-radius: 50%;
   transition: color 0.4s;
+  box-shadow: -1rem 1rem 1.4rem rgba(0, 0, 0, 0.6);
 }
 
 .social-icon:hover {

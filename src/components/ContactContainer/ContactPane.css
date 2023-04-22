@@ -13,8 +13,11 @@
 
 
 .panel-title {
+    color: var(--primary-color);    
+}
+
+.keyword-text {
     color: var(--accent-color);
-    align-self: sta;
 }
 
 .contact-input {
@@ -22,8 +25,9 @@
     font-size: 1.2rem;
     width: 90%;
     border-radius: 2rem;
-    border: solid 4px var(--accent-color);
+    border: none 4px var(--accent-color);
     padding: 0.5rem 2rem;
+    box-shadow: -0.7rem 0.7rem 1.6rem rgba(0, 0, 0, 0.7);
 }
 
 .progress-button {
@@ -34,13 +38,14 @@
     height: 5rem;
     width: 5rem;
     background-color: var(--accent-color);
+    border: solid 2px var(--accent-color);
     color: var(--light-color);
     border-radius: 50%;
     font-size: 4rem;
     font-weight: bold;
     cursor: pointer;
     z-index: 3;
-    border: solid 2px var(--primary-color);
+    box-shadow: -0.8rem 0.8rem 1rem rgba(0, 0, 0, 0.6);
 }
 
 
@@ -59,18 +64,16 @@
 }
 
 
-
-
-
-
-
 .progress-button:hover {
     background-color: var(--secondary-light-color);
+    border: solid 2px var(--secondary-light-color);
+
     color: var(--accent-color);
   }
 
 .progress-button:disabled {
     background-color: var(--primary-color);
     color: var(--secondary-light-color);
+    border: solid 2px var(--primary-color);
     cursor: default;
 }

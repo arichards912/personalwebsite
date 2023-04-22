@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ContactPane.css";
 
-function ContactPane({ index, type, title, placeholder, regex = "", onNext, onPrev, onSubmit }) {
+function ContactPane({ index, type, title, keyword, placeholder, regex = "", onNext, onPrev, onSubmit }) {
   const [inputValue, setInputValue] = useState("");
   const [isValid, setIsValid] = useState(false);
 
@@ -32,7 +32,7 @@ function ContactPane({ index, type, title, placeholder, regex = "", onNext, onPr
       <div className="input-content">
 
       
-        <h1 className="panel-title">{title}</h1>
+        <h1 className="panel-title">{title} <span className="keyword-text">{keyword}?</span></h1>
         
         {type !== "submit" && (
           <input

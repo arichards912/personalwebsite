@@ -8,25 +8,29 @@ function ContactContainer({ onProgressChange = () => {} }) {
   const panels = [
     {
       type: "text",
-      title: "What's your name?",
+      title: "What's your",
+      keyword: "name",
       placeholder: "Jane Doe",
       regex: "^.{1,50}$",
     },
     {
       type: "email",
-      title: "What's your email?",
+      title: "What's your",
+      keyword: "email",
       placeholder: "janeDoe@snailmail.com",
       regex: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
     },
     {
       type: "text",
-      title: "What's your message?",
+      title: "What's your",
+      keyword: "message",
       placeholder: "message",
       regex: "^.{1,200}$",
     },
     {
       type: "submit",
-      title: "Ready to submit?",
+      title: "",
+      keyword: "Submit",
     },
   ];
 
