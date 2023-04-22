@@ -23,11 +23,17 @@
 .contact-input {
     height: 4rem;
     font-size: 1.2rem;
-    width: 90%;
+    width: 17rem;
+    transition: width 1s ease;
     border-radius: 2rem;
     border: none 4px var(--accent-color);
     padding: 0.5rem 2rem;
     box-shadow: -0.7rem 0.7rem 1.6rem rgba(0, 0, 0, 0.7);
+}
+
+.contact-input:focus {
+    width: 90%;
+    outline-width: 0;
 }
 
 .progress-button {
@@ -40,6 +46,8 @@
     background-color: var(--accent-color);
     border: solid 2px var(--accent-color);
     color: var(--light-color);
+    transition-duration: 0.4s;
+    transition-property: background-color, color, border;
     border-radius: 50%;
     font-size: 4rem;
     font-weight: bold;
