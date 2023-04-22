@@ -139,7 +139,7 @@
   .timeline-connector {
     display: none;
     position: absolute;
-    width: 50%;
+    width: 30%;
     height: 0.5rem;
     z-index: 0;
   }
@@ -270,7 +270,7 @@
 
   @keyframes connectorLeft {
     from {
-      transform: translateX(-50%);
+      transform: translateX(-100%);
       opacity: 1;
     }
     to {
@@ -281,7 +281,7 @@
 
   @keyframes connectorRight {
     from {
-      transform: translateX(50%);
+      transform: translateX(100%);
       opacity: 1;
     }
     to {
