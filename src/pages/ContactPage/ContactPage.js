@@ -24,7 +24,12 @@ function ContactPage() {
 
   return (
     <section className="contact-section">
-      <h1 className="contact-title faded-round-corner">Hi, let's get in touch!</h1>
+      <div className="contact-header-container">
+        <div className="contact-header">
+          <h1 className="contact-title">Get In Touch</h1>
+          <h2 className="contact-subtitle">Contact Me</h2>
+        </div>
+      </div>
       <div className = "contact-content">
         <ContactContainer onProgressChange={handleProgressChange} />
 

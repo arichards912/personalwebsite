@@ -1,9 +1,21 @@
-
-.contact-title {
-  font-size: 5rem;
-  font-style: italic;
-  margin-top: 3rem;
+.contact-header-container {
+  display: flex;
+  margin: 2rem auto;
+  justify-content: center;
+  align-items: center;
 }
+
+.contact-header {
+  margin: 0 1.5rem;
+  padding: 1rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--secondary-light-color);
+  border-radius: 2rem;
+}
+
 
 .contact-content {
   display: flex;
@@ -56,9 +68,6 @@
     width: 40%;
   }
 
-  .contact-title {
-    margin-left: 5rem;
-  }
 }
 
 .footer-text {
