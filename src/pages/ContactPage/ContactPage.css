@@ -16,6 +16,15 @@
   border-radius: 2rem;
 }
 
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 20%;
+}
+
 
 .contact-content {
   display: flex;
@@ -25,50 +34,9 @@
   width: 100%;
   gap: 2rem;
   padding: 0 1rem 0 1rem;
-  margin-top: 2rem;
-  margin-bottom: 6rem;
+  margin: 1rem 0;
 }
 
-
-.progress-circle {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  margin: 1rem;
-  width: auto;
-}
-
-.rc-progress-circle {
-  position: relative;
-  width: 100%;
-}
-
-.progress-percent {
-  display: inline;
-  position: absolute;
-  align-self: center;
-  font-size: 5rem;
-}
-
-
-@media (min-width: 900px) {
-  .contact-content {
-    flex-direction: row;
-    margin-top: 10vh;
-  }
-
-  .progress-circle {
-    width: 30%;
-    height: 30%;
-    min-width: 300px;
-    max-width: 700px;
-  }
-
-  .contact-container {
-    width: 40%;
-  }
-
-}
 
 
 

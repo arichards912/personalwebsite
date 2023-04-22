@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSmoothProgress } from '../../hooks/SmoothProgress/SmoothProgress';
 import { useSmoothColorTransition } from '../../hooks/SmoothColor/SmoothColor';
 import ContactContainer from '../../components/ContactContainer/ContactContainer';
-import {Circle} from 'rc-progress';
+import {Line} from 'rc-progress';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedin, faGithub, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import './ContactPage.css';
@@ -30,15 +30,11 @@ function ContactPage() {
           <h2 className="contact-subtitle">Contact Me</h2>
         </div>
       </div>
+      <div className="progress-bar">
+        <Line percent={animatedPercent} strokeWidth={1} strokeColor={animatedColor} strokeLinecap='round' />
+      </div>
       <div className = "contact-content">
         <ContactContainer onProgressChange={handleProgressChange} />
-
-        <div className="progress-circle">
-          <Circle percent={animatedPercent} strokeWidth={8} strokeColor={animatedColor} strokeLinecap='round' />
-          <p className='progress-percent'>%</p>
-        </div>
-        
-
       </div>
 
       <div className="social-media-section">
