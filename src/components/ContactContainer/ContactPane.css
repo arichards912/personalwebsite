@@ -25,6 +25,7 @@
     font-size: 1.2rem;
     width: 17rem;
     transition: width 1s ease;
+    animation: fadeIn 1s ease;
     border-radius: 2rem;
     border: none 4px var(--accent-color);
     padding: 0.5rem 2rem;
@@ -85,3 +86,12 @@
     border: solid 2px var(--primary-color);
     cursor: default;
 }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
