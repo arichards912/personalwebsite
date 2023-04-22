@@ -1,12 +1,18 @@
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 95vh;
+}
+
 .contact-header-container {
   display: flex;
-  margin: 2rem auto;
   justify-content: center;
   align-items: center;
 }
 
 .contact-header {
-  margin: 0 1.5rem;
   padding: 1rem;
   display: inline-flex;
   flex-direction: column;
@@ -23,6 +29,15 @@
   align-items: center;
   width: 100%;
   padding: 1rem 20%;
+  margin: 1rem 0;
+}
+
+.contact-content-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10rem;
+  width: 100%;
+  align-items: center;
 }
 
 
@@ -33,8 +48,10 @@
   align-items: center;
   width: 100%;
   gap: 2rem;
-  padding: 0 1rem 0 1rem;
-  margin: 1rem 0;
+  padding: 2rem;
+  margin: 1rem 15%;
+  border: 3px solid var(--secondary-light-color);
+  border-radius: 2rem;
 }
 
 

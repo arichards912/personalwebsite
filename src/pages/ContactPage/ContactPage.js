@@ -33,10 +33,12 @@ function ContactPage() {
       <div className="progress-bar">
         <Line percent={animatedPercent} strokeWidth={1} strokeColor={animatedColor} strokeLinecap='round' />
       </div>
-      <div className = "contact-content">
-        <ContactContainer onProgressChange={handleProgressChange} />
+      <div className="contact-content-container">
+        <div className = "contact-content">
+          <ContactContainer onProgressChange={handleProgressChange} />
+        </div>
       </div>
-
+      
       <div className="social-media-section">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
           <FontAwesomeIcon icon={faFacebook} />
