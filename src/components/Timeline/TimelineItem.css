@@ -51,7 +51,7 @@
     z-index: 2;
     border: solid 3px var(--secondary-light-color);
     color: #fff;
-    
+    box-shadow: -0.6rem 0.6rem 0.8rem rgba(0, 0, 0, 0.6);
   }
 
   .timeline-icon.animate.right {
@@ -102,8 +102,6 @@
   }
     
 
-
-
   .timeline-content {
     width: 100%;
     padding: 2rem;
@@ -111,7 +109,9 @@
     background-color: #f9f9f9;
     line-height: 30px;
     z-index: 3;
+    box-shadow: -0.6rem 0.6rem 1.2rem rgba(0, 0, 0, 0.6);
   }
+
 
   .timeline-content:hover .timeline-details li{
     visibility: visible;
