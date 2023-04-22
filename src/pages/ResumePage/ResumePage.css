@@ -12,7 +12,10 @@
     right: 0;
     padding: 1rem 3rem;
     background-color: var(--accent-color);
+    background: linear-gradient(to left, var(--accent-color) 50%, var(--secondary-light-color) 50%) right;
+    background-size: 200% 100%;
     color: var(--light-color);
+    transition: all 0.8s ease;
     border-radius: 2rem;
     font-size: 1.2rem;
     cursor: pointer;
@@ -22,7 +25,7 @@
   }
 
   .download-button:hover {
-    background-color: var(--secondary-light-color);
+    background-position: left;
     color: var(--accent-color);
   }
   
