@@ -1,5 +1,5 @@
 
-svg {
+.sidebar-item svg {
     font-size: 32px;
 }
 
@@ -7,4 +7,8 @@ svg {
     color: var(--accent-color);
     
   }
+
+.sidebar-item svg:hover {
+    color: var(--accent-color);
+}
   
