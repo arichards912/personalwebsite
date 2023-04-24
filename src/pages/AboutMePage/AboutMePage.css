@@ -1,0 +1,79 @@
+.about-me {
+    display: flex;
+    position: relative;
+    top: 4rem;
+  }
+  
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    width: 5rem;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    height: 96vh;
+  }
+
+.sidebar .sidebar-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+  
+ 
+
+  .content {
+    margin-left: 5rem;
+    width: 100%;
+  }
+
+  
+  /* Fade Animation */
+  .fade-enter {
+    opacity: 0;
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 900px) {
+    .sidebar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+    }
+  
+    .sidebar hr {
+      display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+  }
+  

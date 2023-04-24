@@ -1,0 +1,14 @@
+
+svg {
+    font-size: 32px;
+}
+
+.sidebar-item .active svg{
+    color: var(--accent-color);
+    
+  }
+  
+  .sidebar hr {
+    width: 50%;
+    margin: 0.5rem 0;
+  }
