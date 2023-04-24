@@ -46,9 +46,9 @@ const AboutMe = () => {
     ],
     Why: [
       {
-        title: 'Why',
+        title: 'Cat',
         image: xena,
-        description: 'This is the Why section description.',
+        description: 'Not only is my cat, Xena, adorable - she is also an incredibly diligent code reviewer.',
       },
     ],
     How: [

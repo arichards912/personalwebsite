@@ -20,6 +20,7 @@
     padding-top: 4rem;
     background-color: var(--primary-color);
     height: 100vh;
+    animation: fadeIn 1s ease-in forwards;
   }
 
 .sidebar .sidebar-item {
@@ -35,6 +36,7 @@
   .content {
     margin-left: 5rem;
     width: 100%;
+    animation: fadeIn 1s ease-in forwards;
   }
 
   

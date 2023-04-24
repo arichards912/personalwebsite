@@ -6,6 +6,7 @@
     color: var(--secondary-color);
     background-color: var(--secondary-color);
     overflow: hidden;
+    background-image: linear-gradient(var(--secondary-color), 70%, var(--secondary-light-color));
   }
   
 

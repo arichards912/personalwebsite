@@ -3,14 +3,16 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 95vh;
+  height: 100vh;
   top: 4rem;
+  background-image: linear-gradient(var(--secondary-color), 90%, var(--secondary-light-color));
 }
 
 .contact-header-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 .contact-header {
@@ -31,6 +33,7 @@
   width: 100%;
   padding: 1rem 20%;
   margin: 1rem 0;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 .rc-progress-line {
@@ -43,6 +46,7 @@
   margin-bottom: 10rem;
   width: 100%;
   align-items: center;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 
@@ -74,8 +78,9 @@
   flex-direction: row;
   justify-content: space-evenly;
   gap: 1rem;
-  padding: 0 20%;
+  padding: 0 10%;
   margin: 3rem 0;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 .social-icon {

@@ -60,6 +60,7 @@
     border-radius: 3rem;
     z-index: 2;
     box-shadow: -1rem -1rem 1.3rem rgba(0, 0, 0, 0.5);
+    object-fit: cover;
 }
 
   /* Fade Animation */
