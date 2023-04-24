@@ -13,8 +13,10 @@
 .content-pane h2 {
     font-size: 60px;
     border: 3px solid var(--secondary-light-color);
-    border-radius: 2rem;
-    padding: 1rem 4rem;
+    border-radius: 2rem 2rem 0 0;
+    border-bottom: none;
+    padding: 2rem 4rem;
+    transition: all 1s ease-out;
 }
 
 .content-image-section {
@@ -56,7 +58,6 @@
     max-width: 70vh;
     max-height: 70vh;
     border-radius: 3rem;
-    margin-top: 2rem;
     z-index: 2;
     box-shadow: -1rem -1rem 1.3rem rgba(0, 0, 0, 0.5);
 }
@@ -78,6 +79,14 @@
   .fade-exit-active {
     opacity: 0;
     transition: opacity 1.5s ease-in;
+  }
+
+  .fade-enter h2 {
+    transform: translateY(150%);
+  }
+
+  .fade-exit h2 {
+    transform: translateY(150%);
   }
   
   .fade-enter .description {
@@ -105,8 +114,7 @@
     .content-item img {
         height: 90vw;
         width: 90vw;
-        margin: 2rem;
-        margin-bottom: 0;
+        margin: 0 2rem;
     }
 
     .content-item .description {

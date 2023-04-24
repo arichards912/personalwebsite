@@ -9,7 +9,7 @@ const ContentPane = ({ id, title, items }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % (items.length));
-    }, 7500);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, [items.length]);
@@ -24,7 +24,7 @@ const ContentPane = ({ id, title, items }) => {
         >
           <div className="content-item">
             <div className="content-image-section">
-              <h2>{title}</h2>
+              <h2>{items[activeIndex].title}</h2>
               <img src={items[activeIndex].image} alt={items[activeIndex].title} />
             </div>
             <p className={`description ${activeIndex % 2 === 0 ? 'left-to-right' : ''}`}>
