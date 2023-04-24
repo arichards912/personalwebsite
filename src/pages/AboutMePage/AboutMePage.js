@@ -23,6 +23,11 @@ const AboutMe = () => {
         image: rocketLaunch,
         description: 'This is the Who section description.',
       },
+      {
+        title: 'Who II',
+        image: neuralNet,
+        description: 'This is the Who section second description.',
+      },
     ],
     
     What: [

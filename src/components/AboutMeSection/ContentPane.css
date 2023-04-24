@@ -1,19 +1,20 @@
 .content-pane {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: space-around;
-    height: 100vh;
+    position: relative;
+    height: 97vh;
     width: 100%;
     padding: 0 10vw;
-    background-image: linear-gradient(var(--secondary-color), var(--secondary-light-color));
+    
 }
 
 .content-pane h2 {
     font-size: 60px;
     border: 3px solid var(--secondary-light-color);
     border-radius: 2rem;
-    padding: 1rem 2rem;
+    padding: 1rem 4rem;
 }
 
 .content-image-section {
@@ -24,25 +25,29 @@
 }
 
 .content-item {
+    position: absolute;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     height: auto;
     width: 100%;
 }
 
-.content-item p {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.content-item .description {
+    display: inline-block;
     color: var(--accent-color);
     font-size: 24px;
     background-color: var(--secondary-light-color);
-    padding: 1rem 2rem;
+    padding: 2rem;
     border-radius: 0 2rem 2rem 0;
+    width: 30vw;
+    margin-right: 2rem;
+    height: 100%;
+    transition: transform 1s ease-out;
+    z-index: 1;
+    box-shadow: -1rem -1rem 1.3rem rgba(0, 0, 0, 0.5);
 }
 
 .content-item img {
@@ -52,7 +57,37 @@
     max-height: 70vh;
     border-radius: 3rem;
     margin-top: 2rem;
+    z-index: 2;
+    box-shadow: -1rem -1rem 1.3rem rgba(0, 0, 0, 0.5);
 }
+
+  /* Fade Animation */
+  .fade-enter {
+    opacity: 0;
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 1.5s ease-in;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 1.5s ease-in;
+  }
+  
+  .fade-enter .description {
+    transform: translateX(-100%);
+  }
+
+  .fade-exit-active .description {
+    transform: translateX(-100%);
+  }
+
 
 @media screen and (max-width: 900px) {
     .content-pane {
@@ -63,7 +98,6 @@
 
     .content-item {
         flex-direction: column;
-        height: 60%;
         justify-content: center;
         align-items: center;
     }
@@ -72,10 +106,25 @@
         height: 90vw;
         width: 90vw;
         margin: 2rem;
+        margin-bottom: 0;
     }
 
-    .content-item p {
-        margin: 2rem;
-        height: auto;
+    .content-item .description {
+        height: 12rem;
+        width: 75vw;
+        text-align: center;
+        border-radius: 0 0 2rem 2rem;
+        margin: 0;
     }
+
+    .fade-enter .description {
+        transform: translateY(-100%);
+      }
+    
+      .fade-exit-active .description {
+        transform: translateY(-100%);
+      }
 }
+
+
+

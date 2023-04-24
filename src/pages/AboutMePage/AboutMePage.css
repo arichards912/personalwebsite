@@ -2,6 +2,7 @@
     display: flex;
     position: relative;
     top: 4rem;
+    background-image: linear-gradient(var(--secondary-color), var(--secondary-light-color), 30%, var(--secondary-color), var(--secondary-light-color), var(--secondary-color));
   }
   
 
@@ -16,8 +17,9 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 1rem;
+    padding-top: 4rem;
     background-color: var(--primary-color);
-    height: 96vh;
+    height: 100vh;
   }
 
 .sidebar .sidebar-item {
@@ -36,24 +38,7 @@
   }
 
   
-  /* Fade Animation */
-  .fade-enter {
-    opacity: 0;
-  }
-  
-  .fade-enter-active {
-    opacity: 1;
-    transition: opacity 1s ease-in;
-  }
-  
-  .fade-exit {
-    opacity: 1;
-  }
-  
-  .fade-exit-active {
-    opacity: 0;
-    transition: opacity 1s ease-in;
-  }
+
   
   /* Responsive Design */
   @media screen and (max-width: 900px) {
@@ -64,12 +49,9 @@
       width: 100%;
       height: auto;
       flex-direction: row;
-      justify-content: center;
       gap: 1rem;
-    }
-  
-    .sidebar hr {
-      display: none;
+      z-index: 3;
+      padding-top: 1rem;
     }
 
     .content {

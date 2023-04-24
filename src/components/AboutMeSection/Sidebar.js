@@ -21,7 +21,6 @@ const Sidebar = () => {
     { name: 'How', icon: faCogs },
   ];
   
-  
 
   return (
     <nav className="sidebar">
@@ -30,6 +29,7 @@ const Sidebar = () => {
           <Link
             activeClass="active"
             to={section.name}
+            offset={-70}
             spy={true}
             smooth={true}
             duration={500}
