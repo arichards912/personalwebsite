@@ -1,5 +1,6 @@
 .portfolio-section {
   background-color: var(--primary-color);
+  top: 4rem;
   height: 100vh;
 }
 

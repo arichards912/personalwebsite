@@ -1,5 +1,7 @@
 .resume-page {
   background-color: var(--seconary-light-color);
+  position: relative;
+  top: 4rem;
   }
 
   .section-title {
