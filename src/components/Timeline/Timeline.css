@@ -17,6 +17,7 @@
     background-color: var(--secondary-light-color);
     left: 50%;
     z-index: 1;
+    bottom: 740px;
   }
 
   .year-label {
