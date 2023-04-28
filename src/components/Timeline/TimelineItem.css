@@ -1,6 +1,7 @@
 .timeline-item {
+    position: absolute;
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
     width: 50%;
     margin: 2rem 0 2rem 0;
@@ -26,11 +27,6 @@
     animation: slideInRight 2s ease-out forwards;
   }
   
-  .timeline-icon {
-    position: absolute;
-    z-index: 2;
-  }
-  
   .timeline-item.left .timeline-icon {
     left: calc(100% - 2rem);
   }
@@ -40,6 +36,8 @@
   }
   
   .timeline-icon {
+    top: 1rem;
+    position: absolute;
     display: none;
     justify-content: center;
     align-items: center;
@@ -81,7 +79,8 @@
     display: block;
     animation: bounceRight 2.2s ease-out forwards;
   }
-  
+
+
   @media (max-width: 850px) {
     .timeline-info {
       position: relative;
@@ -103,7 +102,11 @@
     
 
   .timeline-content {
+    position: relative;
     width: 100%;
+    max-height: 10rem;
+    overflow: hidden;
+    transition: max-height 2.5s ease; 
     padding: 2rem;
     border-radius: 2rem;
     background-color: var(--light-color);
@@ -113,30 +116,34 @@
     box-shadow: -0.6rem 0.6rem 1.2rem rgba(0, 0, 0, 0.6);
   }
 
+  @media (max-width: 1200px) {
+    .timeline-content {
+      max-height: 16rem;
+    }
+  }
+  
+  
 
-  .timeline-content:hover .timeline-details li{
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(100%);
-    transition: all 0.5s ease;
-    z-index: 4;
-  }
-  
-  
-  .timeline-details li{
-    position: absolute;
-    color: var(--secondary-light-color);
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    z-index: 4;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-  }
+.timeline-content:hover {
+  max-height: 100vh;
+}
+
+
+
+.timeline-content p {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.timeline-content:hover p {
+  opacity: 1;
+  z-index: 4;
+}
+
 
 
   .timeline-connector {
+    top: 2.8rem;
     display: none;
     position: absolute;
     width: 30%;
@@ -158,10 +165,10 @@
 
 
   .timeline-duration-container {
+    top: 1rem;
     position: absolute;
     z-index: 1;
     opacity: 1;
-    top: 50%;
     overflow: hidden;
   }
 

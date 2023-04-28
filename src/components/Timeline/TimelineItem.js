@@ -72,6 +72,7 @@ const TimelineItem = ({title, date, description, details, icon, side, actualPosi
     }
   }
 
+
   return (
     <div className={`timeline-item ${side}`} style={{ top: `${actualPosition}px`}}>
       <div className={`timeline-icon ${side} ${posIndex === 0 ? 'animate' : ''}`} style={{backgroundColor: color}}>
@@ -81,12 +82,7 @@ const TimelineItem = ({title, date, description, details, icon, side, actualPosi
         <div className="timeline-content" style={{border: `solid 6px ${color}`}}>
           <h2>{title}</h2>
           <h4>{date}</h4>
-          <p>{description}</p>
-          <ul className="timeline-details">
-            {details.map((detail, index) => (
-              <li key={index} style={{transform: `translateY(${((index + 1) * 160) - 90}px)`, transition: `all 0.5s ease ${index*0.1}s`}}>{detail}</li>
-            ))}
-          </ul>
+          <p><br/>{description}</p>
         </div>
       </div>
       <div ref={connectorRef} className={`timeline-connector ${side}`} style={{backgroundColor: color}}></div>

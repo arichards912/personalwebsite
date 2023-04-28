@@ -149,7 +149,6 @@ const Timeline = ({ items }) => {
           title={item.title}
           date={`${getDateString(item.startDate)} - ${getDateString(item.endDate)}`}
           description={item.description}
-          details={item.details}
           icon={item.icon}
           side={positions[index]}
           actualPosition={calculateRelativePosition(item.endDate) * timelineHeight}

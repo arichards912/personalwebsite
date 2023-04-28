@@ -8,56 +8,49 @@ const ResumePage = () => {
       title: 'Software Engineer - FlexTrade',
       startDate: '2022-06-25',
       endDate: 'Present',
-      description: 'Delivered OMS features and resolved time-sensitive issues for clients through effective communication and technical expertise.',
-      details: ['Collaborated with Hedge Fund Heads and Project Managers to implement OMS features tailored to client needs', 'Onboarded clients and provided support with MySQL, Jenkins, Scala, and Python', 'Developed a proprietary version-tracking system for automated documentation, streamlining internal processes', 'Conducted DR testing to ensure system reliability and stability in critical situations'],
+      description: 'Implemented tailored OMS features and on-boarded clients, utilizing MySQL, Jenkins, Scala, and Python while developing a proprietary version-tracking system for automated documentation.',
       icon: '💻',
     },
     {
       title: 'Software Engineer - Walters Buildings',
       startDate: '2020-06-06',
       endDate: '2022-06-10',
-      description: 'Developing proprietary applications, website, and databases for the construction industry.',
-      details: ['Created and implemented a Java Swing application using TensorFlow linear regression for accurate company estimates', 'Utilized MySQL, Azure, and .Net platform in a two-person development team for modernizing industry architecture', 'Ensured software quality through systematic design, testing, and implementation'],
+      description: 'Developed proprietary applications for the construction industry using Java Swing, TensorFlow, MySQL, Azure, and .Net platform, ensuring software quality through systematic design, testing, and implementation.',
       icon: '💻',
     },
     {
       title: 'Software Trainer - UW-Madison',
       startDate: '2018-10-02',
       endDate: '2020-06-30',
-      description: 'Educating students on programming languages, concepts, and software.',
-      details: ['Instructed groups of 20+ students in Java, Python, and Excel Formulas', 'Developed a lesson web page with an embedded IDE, reducing class and prep time by 50%', 'Adapted teaching methods to accommodate diverse learning needs and styles'],
+      description: 'Educated students on programming languages like Java, Python, and Excel formulas, creating an interactive lesson web page with an embedded IDE and adapting teaching methods for diverse learning needs.',
       icon: '💻',
     },
     {
       title: 'Software Engineer Intern - Northwestern Mutual',
       startDate: '2016-06-03',
       endDate: '2018-08-28',
-      description: 'Utilized data analytics tools to support insurance trend prediction and visualization.',
-      details: ['Managed data warehouses using PowerBI and AWS for powerful visualizations with linked corporate data', 'Led development research for insurance trend prediction using Python, TensorFlow, and Sci-Kit libraries', 'Employed Kubernetes, Docker, and AWS for testing and cloud continuity of architecture projects in an Agile-Scrum environment'],
+      description: 'Utilized PowerBI, AWS, Python, TensorFlow, and Sci-Kit libraries for data analytics and insurance trend prediction, employing Kubernetes, Docker, and Agile-Scrum methodologies for testing and cloud continuity.',
       icon: '💻',
     },
     {
-      title: 'Policy Analyst Intern - Wisconsin Department of Workforce Development',
+      title: 'Policy Analyst Intern - WI DWD',
       startDate: '2017-10-03',
       endDate: '2018-05-03',
-      description: 'Analyzed the impact of legislation and coordinated strategies for execution.',
-      details: ['Collaborated with statewide government employees for effective legislative execution', 'Drafted policy-effect papers to keep the Secretary of State informed on regulatory execution', 'Demonstrated strong communication skills and attention to detail in policy analysis'],
+      description: 'Analyzed the impact of legislation and coordinated strategies, collaborating with statewide government employees and drafting policy-effect papers to keep the Secretary of State informed.',
       icon: '🏛️',
     },
     {
-      title: 'B.S. in Computer Science & Political Science - University of Wisconsin-Madison',
+      title: 'B.S. CS & Poli Sci - UW Madison',
       startDate: '2017-09-03',
       endDate: '2020-05-03',
-      description: 'Graduated with a B.S. in Computer Science from the University of Wisconsin-Madison.',
-      details: ['Acquired knowledge in data structures and software engineering', 'Completed a double major, demonstrating versatility and strong work ethic', 'Developed critical thinking and problem-solving skills through interdisciplinary education'],
+      description: 'Graduated with a B.S. in Computer Science from the University of Wisconsin-Madison, demonstrating versatility with a double major and developing critical thinking skills through interdisciplinary education.',
       icon: '🎓',
     },
     {
       title: 'Credits at Marquette University',
       startDate: '2015-09-03',
       endDate: '2015-12-31',
-      description: 'Took online courses at Marquette University while in high school.',
-      details: ['Strengthened programming fundamentals for software development', 'Enhanced understanding of data structures for efficient problem-solving', 'Expanded technical knowledge to support future career growth'],
+      description: 'Took online courses at Marquette University while in high school, strengthening programming fundamentals, enhancing understanding of data structures, and expanding technical knowledge for future growth.',
       icon: '🎓',
     },
     {
@@ -65,7 +58,6 @@ const ResumePage = () => {
       startDate: '13.8 Billion Years Ago',
       endDate: 'Never',
       description: 'The universe began with a singularity, which expanded into the universe we know today - eventually producing software developers, and also coffee.',
-      details: [],
       icon: '💥',
     }
   ];
@@ -73,7 +65,6 @@ const ResumePage = () => {
   return (
     <div className="resume-page">
       <a className="download-button" href="/docs/Alexander_Richards_Resume.pdf" download="RichardsResume.pdf">Download Resume</a>
-
       <Timeline items={resumeItems} />
     </div>
   );
