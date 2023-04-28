@@ -5,14 +5,22 @@ import ContentPane from '../../components/AboutMeSection/ContentPane';
 
 import './AboutMePage.css';
 
-import rocketLaunch from "../../media/rocket-launch.jpg";
 import planeWindow from "../../media/plane-window.jpg";
 import booksOverhead from "../../media/books-overhead.jpg";
 import xena from "../../media/xena.jpg";
-import computerLight from "../../media/computer-light.jpg";
 import neuralNet from "../../media/neural-net.jpg";
-import lightStrands from "../../media/light-strands.jpg";
 import lightbulb from "../../media/lightbulb.jpg";
+import madisonSunset from "../../media/madison-sunset.jpg";
+import codeText from "../../media/code-text.jpg";
+import mkeNight from "../../media/mke-night.jpg";
+import workHome from "../../media/workHome.jpg";
+import world from "../../media/world.jpg";
+import library from "../../media/library.jpg";
+import paintedWall from "../../media/painted-wall.jpg";
+import lightTrace from "../../media/light-trace.jpg";
+import paintedHand from "../../media/painted-hand.jpg";
+import collaboration from "../../media/collaboration.jpg";
+import rubix from "../../media/rubix.jpg";
 
 
 
@@ -31,8 +39,8 @@ const AboutMe = () => {
       },
       {
         title: 'Education',
-        image: computerLight,
-        description: 'Holding a degree in Computer Science, I have cultivated a strong foundation in programming, web development, and critical thinking.',
+        image: madisonSunset,
+        description: 'Holding a degree in Computer Science from Madison, WI, I have cultivated a strong foundation in programming, web development, and critical thinking.',
       },
       {
         title: 'My Cat',
@@ -44,7 +52,7 @@ const AboutMe = () => {
     What: [
       {
         title: 'Skills',
-        image: lightStrands,
+        image: codeText,
         description: 'Proficient in multiple programming languages, I create seamless and efficient web applications tailored to client needs.',
       },
       {
@@ -56,12 +64,12 @@ const AboutMe = () => {
     Where: [
       {
         title: 'Hometown',
-        image: booksOverhead,
+        image: mkeNight,
         description: 'Based in Milwaukee, WI, I am proud to collaborate with local businesses and contribute to the growth of our vibrant community.',
       },
       {
         title: 'Workspaces',
-        image: booksOverhead,
+        image: workHome,
         description: 'Adaptable to remote and in-office environments, I efficiently navigate diverse work settings to deliver outstanding results.',
       },
       {
@@ -73,39 +81,39 @@ const AboutMe = () => {
     Why: [
       {
         title: 'Motivations',
-        image: rocketLaunch,
+        image: world,
         description: 'I am driven by the desire to make the web more accessible, user-friendly, and engaging for all users.',
       },
       {
         title: 'Goals',
-        image: lightStrands,
+        image: library,
         description: 'Aspiring to become a thought leader in the software development industry, I continuously expand my skills and share my knowledge with others.',
       },
       {
         title: 'Personal Mission',
-        image: neuralNet,
+        image: paintedWall,
         description: 'Committed to empowering businesses and individuals to thrive online by crafting exceptional digital experiences.',
       },
       {
         title: 'Core Beliefs',
-        image: neuralNet,
+        image: lightTrace,
         description: 'Anchored by the belief that collaboration, innovation, and user-centric design are key to successful software development.',
       },
     ],
     How: [
       {
         title: 'Creative Process',
-        image: computerLight,
+        image: paintedHand,
         description: 'Embracing open communication and feedback, I foster positive team dynamics and consistently deliver high-quality results.',
       },
       {
         title: 'Learning Methods',
-        image: computerLight,
+        image: collaboration,
         description: 'Continuously honing my skills through online courses, workshops, and collaboration with fellow professionals.',
       },
       {
         title: 'Problem Solving',
-        image: computerLight,
+        image: rubix,
         description: 'Combining analytical thinking with creativity, I develop tailored solutions that address unique challenges for clients.',
       },
     ],
