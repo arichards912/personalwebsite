@@ -23,13 +23,11 @@ const ContentPane = ({ id, title, items }) => {
           timeout={{ enter: 1500, exit: 1500 }}
         >
           <div className="content-item">
-            <div className="content-image-section">
               <h2>{items[activeIndex].title}</h2>
-              <img src={items[activeIndex].image} alt={items[activeIndex].title} />
-            </div>
-            <p className={`description ${activeIndex % 2 === 0 ? 'left-to-right' : ''}`}>
-              {items[activeIndex].description}
-            </p>
+                <img src={items[activeIndex].image} alt={items[activeIndex].title} />
+                <p className={`description ${activeIndex % 2 === 0 ? 'left-to-right' : ''}`}>
+                  {items[activeIndex].description}
+                </p>
           </div>
         </CSSTransition>
       </TransitionGroup>

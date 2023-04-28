@@ -2,65 +2,66 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: end;
     position: relative;
     height: 97vh;
-    width: 100%;
-    padding: 0 10vw;
-    
+    width: 100%;    
 }
 
-.content-pane h2 {
+.content-item {
+    position: absolute;
+    display: grid;
+    grid-template-columns: minmax(50vw, 70vh), 1fr;
+    grid-template-rows: 1fr, minmax(50vw, 70vh);
+    grid-template-areas:
+      "header none"
+      "image description";
+    padding: 10vh 10vw
+}
+
+.content-item h2 {
+    grid-area: header;
+    max-width: 85%;
+    text-align: center;
     font-size: 60px;
     border: 3px solid var(--secondary-light-color);
     border-radius: 2rem 2rem 0 0;
     border-bottom: none;
     padding: 2rem 4rem;
     transition: all 1s ease-out;
+    justify-self: center;
+    align-self: end;
 }
 
-.content-image-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.content-item {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    height: auto;
-    width: 100%;
-}
 
 .content-item .description {
-    display: inline-block;
+    grid-area: description;
     color: var(--accent-color);
     font-size: 24px;
     background-color: var(--secondary-light-color);
     padding: 2rem;
     border-radius: 0 2rem 2rem 0;
     width: 30vw;
-    margin-right: 2rem;
-    height: 100%;
     transition: transform 1s ease-out;
     z-index: 1;
+    align-self: center;
+    justify-self: left;
     box-shadow: -1rem -1rem 1.3rem rgba(0, 0, 0, 0.5);
 }
 
+
+
 .content-item img {
+    grid-area: image;
     height: 50vw;
     width: 50vw;
-    max-width: 70vh;
     max-height: 70vh;
+    max-width: 70vh;
     border-radius: 3rem;
     z-index: 2;
     box-shadow: -1rem -1rem 1.3rem rgba(0, 0, 0, 0.5);
     object-fit: cover;
+    justify-self: right;
 }
 
   /* Fade Animation */
@@ -101,15 +102,27 @@
 
 @media screen and (max-width: 900px) {
     .content-pane {
-        justify-content: center;
+        justify-content: end;
         align-items: center;
-        padding: 0;
+        padding: 0 0 10vh 0;
     }
 
     .content-item {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr, 3fr 1fr;
+        grid-template-areas:
+          "header"
+          "image"
+          "description";
+        padding: 0 0;
+    }
+
+    .content-item h2 {
+        max-width: 80vw;
+        text-align: center;
+        padding: 2rem 1rem;
     }
 
     .content-item img {
@@ -119,9 +132,10 @@
     }
 
     .content-item .description {
-        height: 12rem;
+        height: 15rem; 
         width: 75vw;
         text-align: center;
+        justify-self: center;
         border-radius: 0 0 2rem 2rem;
         margin: 0;
     }
