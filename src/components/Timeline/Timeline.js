@@ -119,7 +119,7 @@ const Timeline = ({ items }) => {
     const timelineElement = timelineRef.current;
     if (timelineElement) {
       const windowHeight = window.innerHeight;
-      const calculatedHeight = Math.max(timelineElement.clientHeight, windowHeight * 3.6);
+      const calculatedHeight = Math.max(timelineElement.clientHeight, windowHeight * 4);
       setTimelineHeight(calculatedHeight);
     }
   }, [timelineRef]);
