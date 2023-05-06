@@ -4,6 +4,7 @@ import "./ContactContainer.css";
 
 function ContactContainer({ onProgressChange = () => {} }) {
   const [activePanel, setActivePanel] = useState(0);
+  const [inputValues, setInputValues] = useState({});
 
   const panels = [
     {
@@ -42,6 +43,15 @@ function ContactContainer({ onProgressChange = () => {} }) {
     setActivePanel((prevActivePanel) => prevActivePanel - 1);
   };
 
+  const handleInputChange = (keyword, value) => {
+    setInputValues((prevInputValues) => ({
+      ...prevInputValues,
+      [keyword]: value,
+    }));
+    console.log(inputValues);
+  };
+  
+
   const handleSubmit = () => {
     console.log("Form submitted");
     // Handle form submission logic here
@@ -67,6 +77,7 @@ function ContactContainer({ onProgressChange = () => {} }) {
             {...panel}
             onNext={handleNext}
             onPrev={handlePrev}
+            onInputChange={handleInputChange}
             onSubmit={handleSubmit}
           />
         </div>
