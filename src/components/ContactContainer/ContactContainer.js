@@ -48,7 +48,6 @@ function ContactContainer({ onProgressChange = () => {} }) {
       ...prevInputValues,
       [keyword]: value,
     }));
-    console.log(inputValues);
   };
   
 
