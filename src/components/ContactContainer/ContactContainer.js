@@ -2,6 +2,44 @@ import React, { useState, useEffect } from "react";
 import ContactPane from "./ContactPane";
 import "./ContactContainer.css";
 
+import { v4 as uuidv4 } from "uuid";
+import AWS from "aws-sdk";
+
+AWS.config.update({
+  region: process.env.REACT_APP_AWS_REGION,
+  credentials: new AWS.Credentials(
+    process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+    process.env.REACT_APP_AWS_SECRET_ACCESS_KEY
+  ),
+});
+
+
+const saveToDynamoDB = async (data) => {
+  console.log("Data:", data);
+  const docClient = new AWS.DynamoDB.DocumentClient();
+
+  const params = {
+    TableName: process.env.REACT_APP_DYNAMODB_TABLE_NAME,
+    Item: {
+      emailid: uuidv4(),
+      name: data.name,
+      email: data.email,
+      message: data.message,
+      timestamp: new Date().toISOString(),
+    },
+  };
+
+  console.log("params:", params);
+
+  try {
+    await docClient.put(params).promise();
+    console.log("Data saved to DynamoDB.");
+  } catch (error) {
+    console.error("Error saving data to DynamoDB:", error);
+  }
+};
+
+
 function ContactContainer({ onProgressChange = () => {} }) {
   const [activePanel, setActivePanel] = useState(0);
   const [inputValues, setInputValues] = useState({});
@@ -53,8 +91,8 @@ function ContactContainer({ onProgressChange = () => {} }) {
 
   const handleSubmit = () => {
     console.log("Form submitted");
-    // Handle form submission logic here
-  };
+    saveToDynamoDB(inputValues);
+  };  
 
 
 
