@@ -24,11 +24,11 @@ function NavBar() {
             RESUME
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to="/portfolio" activeclassname="active-link">
             PORTFOLIO
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink to="/about" activeclassname="active-link">
             ABOUT ME

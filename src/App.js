@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import LandingPage from './pages/LandingPage/LandingPage';
 import ResumePage from './pages/ResumePage/ResumePage';
@@ -15,9 +15,10 @@ function App() {
       <Routes>
         <Route path="/" exact="true" element={<LandingPage />} />
         <Route path="/resume" element={<ResumePage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
+        {/*<Route path="/portfolio" element={<PortfolioPage />} /> */}
         <Route path="/about" element={<AboutMePage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<Navigate to="/" replace />}/>
       </Routes>
     </Router>
   );
