@@ -2,7 +2,7 @@
     display: flex;
     gap: 2rem;
     background-color: var(--secondary-light-color);
-    padding: 1rem 2rem;
+    padding: 1rem 6rem;
     position: fixed;
     width: 100%;
     top: 0;
@@ -47,9 +47,15 @@
     }
   }
 
-  .nav-logo {
+  .nav-logo img {
+    position: absolute;
     font-size: var(--font-size-title);
     font-weight: bold;
+    margin-right: 2rem;
+    top: 0.4rem;
+    left: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
   
   .nav-links li a, .nav-logo {

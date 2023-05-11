@@ -6,6 +6,8 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import './NavBar.css';
 
+import ARLogo from '../../media/favicon.ico';
+
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef(null);
@@ -31,7 +33,7 @@ function NavBar() {
   return (
     <nav className="navbar" ref={navRef}>
       <NavLink to="/" className="nav-logo" activeclassname="active-link" exact="true">
-        AR
+        <img src={ARLogo} alt="Logo" />
       </NavLink>
       <ul className={isMenuOpen ? "nav-links open" : "nav-links"}>
         <li>
