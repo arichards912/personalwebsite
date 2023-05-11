@@ -43,6 +43,8 @@ const saveToDynamoDB = async (data) => {
 function ContactContainer({ onProgressChange = () => {} }) {
   const [activePanel, setActivePanel] = useState(0);
   const [inputValues, setInputValues] = useState({});
+  const [submitStatus, setSubmitStatus] = useState({submitted: false, success: false});
+
 
   const panels = [
     {
@@ -71,6 +73,11 @@ function ContactContainer({ onProgressChange = () => {} }) {
       title: "",
       keyword: "Submit",
     },
+    {
+      type: "status",
+      title: submitStatus.success ? "Thank you!" : "Sorry, there was an error.",
+      keyword: submitStatus.success ? "Your message has been submitted." : "Please try again later."
+    },    
   ];
 
   const handleNext = () => {
@@ -89,10 +96,17 @@ function ContactContainer({ onProgressChange = () => {} }) {
   };
   
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     console.log("Form submitted");
-    saveToDynamoDB(inputValues);
-  };  
+    try {
+        await saveToDynamoDB(inputValues);
+        setSubmitStatus({submitted: true, success: true});
+        handleNext();
+    } catch (error) {
+        setSubmitStatus({submitted: true, success: false});
+        handleNext();
+    }
+};
 
 
 
@@ -108,16 +122,17 @@ function ContactContainer({ onProgressChange = () => {} }) {
   return (
     <div className="contact-container">
       {panels.map((panel, index) => (
-        <div className="panel" key={index} style={{ display: activePanel === index ? "block" : "none" }}>
-          <ContactPane
-            index={index}
-            {...panel}
-            onNext={handleNext}
-            onPrev={handlePrev}
-            onInputChange={handleInputChange}
-            onSubmit={handleSubmit}
-          />
-        </div>
+          <div className="panel" key={index} style={{ display: activePanel === index ? "block" : "none" }}>
+            <ContactPane
+              index={index}
+              {...panel}
+              onNext={handleNext}
+              onPrev={handlePrev}
+              onInputChange={handleInputChange}
+              onSubmit={handleSubmit}
+              submitStatus={submitStatus}
+            />
+          </div>
       ))}
     </div>
   );

@@ -48,7 +48,7 @@
     border: solid 2px var(--accent-color);
     color: var(--light-color);
     transition-duration: 0.4s;
-    transition-property: background-color, color, border;
+    transition-property: background-color, color, border, opacity;
     border-radius: 50%;
     font-size: 4rem;
     font-weight: bold;
@@ -56,6 +56,18 @@
     z-index: 3;
     box-shadow: -0.8rem 0.8rem 1rem rgba(0, 0, 0, 0.6);
 }
+
+.progress-button.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+    pointer-events: auto;
+  }
+  
+  .progress-button.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    pointer-events: none;
+  }
 
 
 .back-button {
