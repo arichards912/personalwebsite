@@ -40,21 +40,21 @@ function ContactPage() {
       </div>
       
       <div className="social-media-section">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+          {/*<a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
           <FontAwesomeIcon icon={faFacebook} />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
           <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+          </a> */}
+          <a href="https://www.instagram.com/arichards912/" target="_blank" rel="noopener noreferrer" className="social-icon">
           <FontAwesomeIcon icon={faInstagram} />
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+          <a href="https://www.linkedin.com/in/alexanderrichards912/" target="_blank" rel="noopener noreferrer" className="social-icon">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="social-icon">
+          <a href="https://github.com/arichards912" target="_blank" rel="noopener noreferrer" className="social-icon">
             <FontAwesomeIcon icon={faGithub} />
-            </a>
+          </a>
         </div>
     </section>
   );
