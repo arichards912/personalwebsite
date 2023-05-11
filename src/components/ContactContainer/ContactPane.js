@@ -45,6 +45,11 @@ function ContactPane({ index, type, title, keyword, placeholder, regex = "", onN
             placeholder={placeholder}
             value={inputValue}
             onChange={handleChange}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && isValid) {
+                handleClickNext();
+              }
+            }}
           />
         )}
       </div>
