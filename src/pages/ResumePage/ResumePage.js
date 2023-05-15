@@ -2,6 +2,10 @@ import React from 'react';
 import Timeline from '../../components/Timeline/Timeline';
 import './ResumePage.css';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
+
+
 const ResumePage = () => {
   const resumeItems = [
     {
@@ -64,7 +68,9 @@ const ResumePage = () => {
 
   return (
     <div className="resume-page">
-      <a className="download-button" href="/docs/Alexander_Richards_Resume.pdf" download="RichardsResume.pdf">Download Resume</a>
+      <a className="download-button" href="/docs/Alexander_Richards_Resume.pdf" download="RichardsResume.pdf">
+        <FontAwesomeIcon icon={faFileArrowDown} />
+      </a>
       <Timeline items={resumeItems} />
     </div>
   );

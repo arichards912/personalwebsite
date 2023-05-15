@@ -1,7 +1,7 @@
 .resume-page {
   background-color: var(--seconary-light-color);
   position: relative;
-  top: 4rem;
+  padding-top: 4rem;
   }
 
   .section-title {
@@ -12,16 +12,16 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    padding: 1rem 3rem;
+    padding: 1.5rem;
     background-color: var(--accent-color);
     background: linear-gradient(to left, var(--accent-color) 50%, var(--secondary-light-color) 50%) right;
     background-size: 200% 100%;
     color: var(--light-color);
     transition: all 0.8s ease;
-    border-radius: 2rem;
-    font-size: 1.2rem;
+    border-radius: 50%;
+    font-size: 2.2rem;
     cursor: pointer;
-    margin: 3rem;
+    margin: 2rem;
     z-index: 5;
     border: solid 2px var(--primary-color)
   }
