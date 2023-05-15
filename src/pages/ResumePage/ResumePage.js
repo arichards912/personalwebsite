@@ -2,9 +2,6 @@ import React from 'react';
 import Timeline from '../../components/Timeline/Timeline';
 import './ResumePage.css';
 
-import ResumePDF from '../../media/Alexander_Richards_Resume.pdf';
-
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -68,6 +65,8 @@ const ResumePage = () => {
       icon: '💥',
     }
   ];
+
+  const ResumePDF = "https://publicpersonalsitecontent.s3.us-east-2.amazonaws.com/Resume.pdf"
 
   return (
     <div className="resume-page">
