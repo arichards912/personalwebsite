@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 100vh;
-  top: 4rem;
+  padding-top: 4rem;
+  height: 110vh;
   background-image: linear-gradient(var(--secondary-color), 90%, var(--secondary-light-color));
 }
 
@@ -43,7 +43,7 @@
 .contact-content-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 10rem;
+  margin-bottom: 2rem;
   width: 100%;
   align-items: center;
   animation: fadeIn 1s ease-in forwards;
@@ -71,7 +71,6 @@
 
 .social-media-section {
   display: flex;
-  position: fixed;
   width: 100%;
   bottom: 0;
   z-index: 4;
@@ -79,7 +78,6 @@
   justify-content: space-evenly;
   gap: 1rem;
   padding: 0 10%;
-  margin: 3rem 0;
   animation: fadeIn 1s ease-in forwards;
 }
 
