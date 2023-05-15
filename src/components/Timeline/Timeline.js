@@ -153,6 +153,7 @@ const Timeline = ({ items }) => {
           side={positions[index]}
           actualPosition={calculateRelativePosition(item.endDate) * timelineHeight}
           posIndex={index}
+          totalItems={items.length}
           duration={calculateIndividualDuration(item.startDate, item.endDate)}
           color={colors[index]}
           offsetIndex={offsetIndices[index]}

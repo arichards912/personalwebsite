@@ -9,42 +9,42 @@ import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 const ResumePage = () => {
   const resumeItems = [
     {
-      title: 'Software Engineer - FlexTrade',
+      title: 'Software Engineer: FlexTrade',
       startDate: '2022-06-25',
       endDate: 'Present',
       description: 'Implemented tailored OMS features and on-boarded clients, utilizing MySQL, Jenkins, Scala, and Python while developing a proprietary version-tracking system for automated documentation.',
       icon: '💻',
     },
     {
-      title: 'Software Engineer - Walters Buildings',
+      title: 'Software Engineer: Walters Buildings',
       startDate: '2020-06-06',
       endDate: '2022-06-10',
       description: 'Developed proprietary applications for the construction industry using Java Swing, TensorFlow, MySQL, Azure, and .Net platform, ensuring software quality through systematic design, testing, and implementation.',
       icon: '💻',
     },
     {
-      title: 'Software Trainer - UW-Madison',
+      title: 'Software Trainer: UW-Madison',
       startDate: '2018-10-02',
       endDate: '2020-06-30',
       description: 'Educated students on programming languages like Java, Python, and Excel formulas, creating an interactive lesson web page with an embedded IDE and adapting teaching methods for diverse learning needs.',
       icon: '💻',
     },
     {
-      title: 'Software Engineer Intern - Northwestern Mutual',
+      title: 'Software Engineer Intern: Northwestern Mutual',
       startDate: '2016-06-03',
       endDate: '2018-08-28',
       description: 'Utilized PowerBI, AWS, Python, TensorFlow, and Sci-Kit libraries for data analytics and insurance trend prediction, employing Kubernetes, Docker, and Agile-Scrum methodologies for testing and cloud continuity.',
       icon: '💻',
     },
     {
-      title: 'Policy Analyst Intern - WI DWD',
+      title: 'Policy Analyst Intern: WI DWD',
       startDate: '2017-10-03',
       endDate: '2018-05-03',
       description: 'Analyzed the impact of legislation and coordinated strategies, collaborating with statewide government employees and drafting policy-effect papers to keep the Secretary of State informed.',
       icon: '🏛️',
     },
     {
-      title: 'B.S. CS & Poli Sci - UW Madison',
+      title: 'B.S. CS & Poli Sci: UW Madison',
       startDate: '2017-09-03',
       endDate: '2020-05-03',
       description: 'Graduated with a B.S. in Computer Science from the University of Wisconsin-Madison, demonstrating versatility with a double major and developing critical thinking skills through interdisciplinary education.',

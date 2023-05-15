@@ -32,10 +32,11 @@ window.addEventListener('scroll', handleScroll);
 // Call handleScroll on page load to check if elements are in view initially
 handleScroll();
 
-const TimelineItem = ({title, date, description, details, icon, side, actualPosition, duration, color, posIndex, offsetIndex }) => {
+const TimelineItem = ({title, date, description, details, icon, side, actualPosition, duration, color, posIndex, totalItems, offsetIndex }) => {
   const infoRef = useRef(null);
   const connectorRef = useRef(null);
   const durationRef = useRef(null);
+  const zIndexVal = totalItems - posIndex;
 
   useEffect(() => {
     const info = infoRef.current;
@@ -78,11 +79,12 @@ const TimelineItem = ({title, date, description, details, icon, side, actualPosi
       <div className={`timeline-icon ${side} ${posIndex === 0 ? 'animate' : ''}`} style={{backgroundColor: color}}>
         {icon}
       </div>
-      <div ref={infoRef} className={`timeline-info ${side} ${posIndex === 0 ? 'animate' : ''}`}>
+      <div ref={infoRef} className={`timeline-info ${side} ${posIndex === 0 ? 'animate' : ''}`}
+      style={{zIndex: zIndexVal}}>
         <div className="timeline-content" style={{border: `solid 6px ${color}`}}>
           <h2>{title}</h2>
           <h4>{date}</h4>
-          <p><br/>{description}</p>
+          <p>{description}</p>
         </div>
       </div>
       <div ref={connectorRef} className={`timeline-connector ${side}`} style={{backgroundColor: color}}></div>
