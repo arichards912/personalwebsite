@@ -105,6 +105,7 @@
         justify-content: end;
         align-items: center;
         padding: 0 0 10vh 0;
+        margin-top: 8rem;
     }
 
     .content-item {
@@ -120,7 +121,8 @@
     }
 
     .content-item h2 {
-        max-width: 80vw;
+        font-size: 2rem;
+        max-width: 70vw;
         min-width: 50vw;
         text-align: center;
         padding: 2rem 1rem;
@@ -133,8 +135,9 @@
     }
 
     .content-item .description {
+        font-size: 1.2rem;
         height: 15rem; 
-        width: 75vw;
+        width: 70vw;
         text-align: center;
         justify-self: center;
         border-radius: 0 0 2rem 2rem;
