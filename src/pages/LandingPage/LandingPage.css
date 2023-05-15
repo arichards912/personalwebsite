@@ -36,6 +36,12 @@ h1 {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+
 @keyframes headshotFadeIn {
   from {
     opacity: 0;
