@@ -1,11 +1,9 @@
-import React, {useRef, useEffect} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import './TimelineItem.css';
 
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-  console.log(rect);
-  console.log(windowHeight);
 
   return (
     rect.top >= 0 &&
@@ -32,11 +30,12 @@ window.addEventListener('scroll', handleScroll);
 // Call handleScroll on page load to check if elements are in view initially
 handleScroll();
 
-const TimelineItem = ({title, date, description, details, icon, side, actualPosition, duration, color, posIndex, totalItems, offsetIndex }) => {
+const TimelineItem = ({title, date, description, details, icon, side, relativePosition, duration, color, posIndex, totalItems, offsetIndex, timelineHeight }) => {
   const infoRef = useRef(null);
   const connectorRef = useRef(null);
   const durationRef = useRef(null);
   const zIndexVal = totalItems - posIndex;
+  const [actualPosition, setActualPosition] = useState(relativePosition * timelineHeight);
 
   useEffect(() => {
     const info = infoRef.current;
@@ -51,19 +50,19 @@ const TimelineItem = ({title, date, description, details, icon, side, actualPosi
       duration.classList.add('animate');
     };
 
+    setActualPosition(relativePosition * timelineHeight);
+
     info.addEventListener('animationend', handleFirstAnimationEnd);
     connector.addEventListener('animationend', handleSecondAnimationEnd);
-
     // Clean up event listeners on unmount
     return () => {
       info.removeEventListener('animationend', handleFirstAnimationEnd);
       connector.removeEventListener('animationend', handleSecondAnimationEnd);
     };
-  }, []);
+  }, [timelineHeight, relativePosition]);
 
 
   let offset = 11 * offsetIndex;
-  console.log("offsetindex: ", offsetIndex);
   if (offset === 0) {
     if (side === 'left') {
       offset = 0;

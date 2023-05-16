@@ -109,6 +109,17 @@ const Timeline = ({ items }) => {
   };
 
 
+  const handleResize = () => {
+    const timelineElement = timelineRef.current;
+    if (timelineElement) {
+      const windowHeight = window.innerHeight;
+      const calculatedHeight = windowHeight * 4;
+      setTimelineHeight(calculatedHeight);
+    }
+  };
+
+  
+
   const positions = calculatePositions();
   const sortedItems = getSortedItems();
   const offsetIndices = calculateOffsetIndices(sortedItems, positions);
@@ -116,13 +127,11 @@ const Timeline = ({ items }) => {
   const timelineBuffer = 800;
 
   useEffect(() => {
-    const timelineElement = timelineRef.current;
-    if (timelineElement) {
-      const windowHeight = window.innerHeight;
-      const calculatedHeight = Math.max(timelineElement.clientHeight, windowHeight * 4);
-      setTimelineHeight(calculatedHeight);
-    }
-  }, [timelineRef]);
+    handleResize(); 
+    window.addEventListener('resize', handleResize); 
+    return () => window.removeEventListener('resize', handleResize);
+  }, [timelineRef]); 
+  
 
   return (
     <div className="timeline" ref={timelineRef} style={{ minHeight: timelineHeight + timelineBuffer }}>
@@ -151,12 +160,13 @@ const Timeline = ({ items }) => {
           description={item.description}
           icon={item.icon}
           side={positions[index]}
-          actualPosition={calculateRelativePosition(item.endDate) * timelineHeight}
+          relativePosition={calculateRelativePosition(item.endDate)}
           posIndex={index}
           totalItems={items.length}
           duration={calculateIndividualDuration(item.startDate, item.endDate)}
           color={colors[index]}
           offsetIndex={offsetIndices[index]}
+          timelineHeight={timelineHeight}
         />
       ))}
     </div>
