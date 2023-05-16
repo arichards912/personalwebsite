@@ -9,10 +9,14 @@
   }
   
   .download-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     bottom: 0;
     right: 0;
-    padding: 1.5rem;
+    width: 5rem;
+    height: 5rem;
     background-color: var(--accent-color);
     background: linear-gradient(to left, var(--accent-color) 50%, var(--secondary-light-color) 50%) right;
     background-size: 200% 100%;
