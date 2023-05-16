@@ -66,6 +66,12 @@
   border-radius: 2rem;
 }
 
+@media (max-width: 768px) {
+  .contact-content {
+    margin: 1rem 10%;
+  }
+}
+
 
 
 
