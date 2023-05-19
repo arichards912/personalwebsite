@@ -56,7 +56,7 @@ const AboutMe = () => {
         description: 'Proficient in multiple programming languages, I create seamless and efficient web applications tailored to client needs.',
       },
       {
-        title: 'Areas of expertise',
+        title: 'Areas of Expertise',
         image: neuralNet,
         description: 'Specializing in machine learning, user and date-driven design, and performance optimization, I deliver visually stunning and functional projects.',
       },

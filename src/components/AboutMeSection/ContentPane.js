@@ -24,10 +24,10 @@ const ContentPane = ({ id, title, items }) => {
         >
           <div className="content-item">
               <h2>{items[activeIndex].title}</h2>
-                <img src={items[activeIndex].image} alt={items[activeIndex].title} />
-                <p className={`description ${activeIndex % 2 === 0 ? 'left-to-right' : ''}`}>
-                  {items[activeIndex].description}
-                </p>
+              <img src={items[activeIndex].image} alt={items[activeIndex].title} />
+              <p className={`description ${activeIndex % 2 === 0 ? 'left-to-right' : ''}`}>
+                {items[activeIndex].description}
+              </p>
           </div>
         </CSSTransition>
       </TransitionGroup>
