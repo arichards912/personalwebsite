@@ -45,10 +45,11 @@ function ContactPage() {
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
           <FontAwesomeIcon icon={faTwitter} />
-          </a> */}
+          </a>
           <a href="https://www.instagram.com/arichards912/" target="_blank" rel="noopener noreferrer" className="social-icon">
           <FontAwesomeIcon icon={faInstagram} />
           </a>
+          */}
           <a href="https://www.linkedin.com/in/alexanderrichards912/" target="_blank" rel="noopener noreferrer" className="social-icon">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
