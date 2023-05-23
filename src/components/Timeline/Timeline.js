@@ -112,7 +112,7 @@ const Timeline = ({ items }) => {
   const handleResize = () => {
     const timelineElement = timelineRef.current;
     if (timelineElement) {
-      const windowHeight = window.innerHeight;
+      const windowHeight = (window.visualViewport ? window.visualViewport.height : window.innerHeight);
       const calculatedHeight = windowHeight * 4;
       setTimelineHeight(calculatedHeight);
     }
