@@ -103,7 +103,7 @@ const Timeline = ({ items }) => {
     }
     /* return a string in the form month-start year-start - month-end year-end */
     const dateObj = new Date(date);
-    const month = dateObj.toLocaleString('default', { month: 'long' });
+    const month = dateObj.toLocaleString('default', { month: 'short' });
     const year = dateObj.getFullYear();
     return `${month} ${year}`;
   };
