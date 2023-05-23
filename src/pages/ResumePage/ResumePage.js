@@ -44,7 +44,7 @@ const ResumePage = () => {
       icon: '🏛️',
     },
     {
-      title: 'B.S. CS & Poli Sci: UW Madison',
+      title: 'Bachelor of Science, CS & Poli Sci: UW Madison',
       startDate: '2017-09-03',
       endDate: '2020-05-03',
       description: 'Graduated with a B.S. in Computer Science from the University of Wisconsin-Madison, demonstrating versatility with a double major and developing critical thinking skills through interdisciplinary education.',
