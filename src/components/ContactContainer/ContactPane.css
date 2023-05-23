@@ -40,7 +40,7 @@
 @media (max-width: 768px) {
     .contact-input {
         width: 75%;
-        font-size: 0.75rem;
+        font-size: 16px;
         padding: 0.2rem 1rem;
         height: 3rem;
     }
