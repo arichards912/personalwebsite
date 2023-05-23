@@ -58,7 +58,7 @@ const AboutMe = () => {
       {
         title: 'Areas of Expertise',
         image: neuralNet,
-        description: 'Specializing in machine learning, user and date-driven design, and performance optimization, I deliver visually stunning and functional projects.',
+        description: 'Specializing in machine learning, user and data-driven design, and performance optimization, I deliver visually stunning and functional projects.',
       },
     ],
     Where: [
